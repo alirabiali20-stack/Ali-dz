@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Ali.dz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Splash Screen -->
+  <div id="splash">
+    <h1 class="typing">مرحبا بك في منصة Ali.dz</h1>
+    <button id="enterBtn">دخول</button>
+  </div>
+
+  <!-- Main Content -->
+  <div id="mainContent">
+
+    <h2 class="section-title">
+      <span class="logo-icon">🟢</span>
+      الخدمات المتاحة
+    </h2>
+
+    <input type="text" class="search" placeholder="🔍 ابحث داخل المنصة">
+
+    <div class="categories">
+
+      <a href="admin.html" class="card-link"><div class="card">الخدمات الإدارية</div></a>
+      <a href="civil.html" class="card-link"><div class="card">الحالة المدنية</div></a>
+      <a href="social.html" class="card-link"><div class="card">الخدمات الاجتماعية</div></a>
+      <a href="casier.html" class="card-link"><div class="card">وزارة العدل</div></a>
+      <a href="housing.html" class="card-link"><div class="card">السكن والعمران</div></a>
+      <a href="education.html" class="card-link"><div class="card">التربية والتعليم</div></a>
+      <a href="training.htm" class="card-link"><div class="card">التكوين المهني</div></a>
+      <a href="payment.html" class="card-link"><div class="card">الدفع الإلكتروني</div></a>
+
+    </div>
+
+    <h2 class="section-title">📚 ثقف نفسك</h2>
+
+    <div class="categories">
+
+      <a href="culture.html" class="card-link"><div class="card">رياضيات</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علوم</div></a>
+      <a href="culture.html" class="card-link"><div class="card">فيزياء</div></a>
+      <a href="culture.html" class="card-link"><div class="card">عربية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">فرنسية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">إنجليزية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علوم إسلامية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علم النفس</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علم الاجتماع</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علوم الرياضة</div></a>
+
+    </div>
+
+    <h2 class="ask-title">❓ اطرح مشكلتك</h2>
+    <textarea placeholder="اكتب مشكلتك هنا..."></textarea>
+    <button class="send">إرسال</button>
+
+    <!-- Contact -->
+    <div class="contact">
+      <h2 class="section-title">📞 اتصل بنا</h2>
+      <div class="contact-icons">
+        <a href="https://wa.me/213671720653" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="55">
+        </a>
+        <a href="https://t.me/RabiaAameur" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="55">
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const enterBtn = document.getElementById("enterBtn");
+    const splash = document.getElementById("splash");
+    const main = document.getElementById("mainContent");
+
+    enterBtn.onclick = () => {
+      splash.style.display = "none";
+      main.style.display = "block";
+    };
+  </script>
+
+</body>
+</html>

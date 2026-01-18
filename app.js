@@ -1,0 +1,34 @@
+// Remove splash screen after animation
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const splash = document.getElementById("splash");
+    if (splash) splash.remove();
+  }, 4000);
+});// Splash Screen - show once
+document.addEventListener("DOMContentLoaded", () => {
+  const splash = document.getElementById("splash");
+
+  if (localStorage.getItem("ali_splash_seen")) {
+    splash.style.display = "none";
+  } else {
+    setTimeout(() => {
+      splash.style.opacity = "0";
+      splash.style.transition = "opacity 0.6s ease";
+
+      setTimeout(() => {
+        splash.style.display = "none";
+        localStorage.setItem("ali_splash_seen", "true");
+      }, 600);
+
+    }, 2500);
+  }
+});function searchCards() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    card.style.display = card.innerText.toLowerCase().includes(input)
+      ? "block"
+      : "none";
+  });
+}

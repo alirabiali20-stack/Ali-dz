@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الخدمات الإدارية</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="hero">
+  <h1>الخدمات الإدارية</h1>
+</header>
+
+<section class="cards">
+  <div class="card">بطاقة تعريف وطنية</div>
+  <div class="card">جواز سفر</div>
+  <div class="card">رخصة سياقة</div>
+</section>
+
+</body>
+</html>

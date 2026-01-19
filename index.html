@@ -27,7 +27,6 @@
     <input type="text" class="search" placeholder="🔍 ابحث داخل المنصة">
 
     <div class="categories">
-
       <a href="admin.html" class="card-link"><div class="card">الخدمات الإدارية</div></a>
       <a href="civil.html" class="card-link"><div class="card">الحالة المدنية</div></a>
       <a href="social.html" class="card-link"><div class="card">الخدمات الاجتماعية</div></a>
@@ -36,13 +35,11 @@
       <a href="education.html" class="card-link"><div class="card">التربية والتعليم</div></a>
       <a href="training.htm" class="card-link"><div class="card">التكوين المهني</div></a>
       <a href="payment.html" class="card-link"><div class="card">الدفع الإلكتروني</div></a>
-
     </div>
 
     <h2 class="section-title">📚 ثقف نفسك</h2>
 
     <div class="categories">
-
       <a href="culture.html" class="card-link"><div class="card">رياضيات</div></a>
       <a href="culture.html" class="card-link"><div class="card">علوم</div></a>
       <a href="culture.html" class="card-link"><div class="card">فيزياء</div></a>
@@ -53,12 +50,16 @@
       <a href="culture.html" class="card-link"><div class="card">علم النفس</div></a>
       <a href="culture.html" class="card-link"><div class="card">علم الاجتماع</div></a>
       <a href="culture.html" class="card-link"><div class="card">علوم الرياضة</div></a>
-
     </div>
 
+    <!-- Ask Problem -->
     <h2 class="ask-title">❓ اطرح مشكلتك</h2>
-    <textarea placeholder="اكتب مشكلتك هنا..."></textarea>
-    <button class="send">إرسال</button>
+
+    <p style="margin-bottom:10px;color:#555">
+      سيتم توجيهك إلى نموذج آمن لإرسال مشكلتك
+    </p>
+
+    <button class="send" onclick="openForm()">إرسال المشكلة</button>
 
     <!-- Contact -->
     <div class="contact">
@@ -84,6 +85,13 @@
       splash.style.display = "none";
       main.style.display = "block";
     };
+
+    function openForm() {
+      window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform",
+        "_blank"
+      );
+    }
   </script>
 
 </body>

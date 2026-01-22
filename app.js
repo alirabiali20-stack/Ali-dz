@@ -1,11 +1,15 @@
-const enterBtn = document.getElementById("enterBtn");
-const splash = document.getElementById("splash");
-const main = document.getElementById("mainContent");
+document.addEventListener("DOMContentLoaded", function () {
 
-enterBtn.onclick = () => {
-  splash.style.display = "none";
-  main.style.display = "block";
-};
+  const enterBtn = document.getElementById("enterBtn");
+  const splash = document.getElementById("splash");
+  const main = document.getElementById("mainContent");
+
+  enterBtn.addEventListener("click", function () {
+    splash.style.display = "none";
+    main.style.display = "block";
+  });
+
+});
 
 function openForm() {
   window.open(

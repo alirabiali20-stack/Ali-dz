@@ -2,57 +2,97 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>Ali.dz | المنصة الشاملة</title>
+  <title>Ali.dz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
+  <!-- Splash Screen -->
   <div id="splash">
     <h1 class="typing">مرحبا بك في منصة Ali.dz</h1>
-    <button id="enterBtn">دخول المنصة</button>
+    <button id="enterBtn">دخول</button>
   </div>
 
+  <!-- Main Content -->
   <div id="mainContent">
-    <input type="text" id="searchInput" class="search" placeholder="🔍 ابحث عن أي خدمة...">
 
-    <h2 class="section-title">🏛️ الخدمات الإدارية</h2>
+    <h2 class="section-title">
+      <span class="logo-icon">🟢</span>
+      الخدمات المتاحة
+    </h2>
+
+    <input type="text" class="search" placeholder="🔍 ابحث داخل المنصة">
+
     <div class="categories">
-      <a href="admin.html" class="card-link"><div class="card admin-card">الخدمات الإدارية</div></a>
-      <a href="civil.html" class="card-link"><div class="card admin-card">الحالة المدنية</div></a>
-      <a href="casier.html" class="card-link"><div class="card admin-card">وزارة العدل</div></a>
-      <a href="housing.html" class="card-link"><div class="card admin-card">السكن والعمران</div></a>
-      <a href="payment.html" class="card-link"><div class="card admin-card">الدفع الإلكتروني</div></a>
+      <a href="admin.html" class="card-link"><div class="card">الخدمات الإدارية</div></a>
+      <a href="civil.html" class="card-link"><div class="card">الحالة المدنية</div></a>
+      <a href="social.html" class="card-link"><div class="card">الخدمات الاجتماعية</div></a>
+      <a href="casier.html" class="card-link"><div class="card">وزارة العدل</div></a>
+      <a href="housing.html" class="card-link"><div class="card">السكن والعمران</div></a>
+      <a href="education.html" class="card-link"><div class="card">التربية والتعليم</div></a>
+      <a href="training.htm" class="card-link"><div class="card">التكوين المهني</div></a>
+      <a href="payment.html" class="card-link"><div class="card">الدفع الإلكتروني</div></a>
     </div>
 
-    <h2 class="section-title">🧭 الخدمات اليومية والشحن</h2>
+    <h2 class="section-title">📚 ثقف نفسك</h2>
+
     <div class="categories">
-      <a href="daily.html" class="card-link"><div class="card daily-card">الخدمات اليومية</div></a>
-      <a href="health.html" class="card-link"><div class="card daily-card">الصحة</div></a>
-      <a href="mobilis.html" class="card-link"><div class="card daily-card">شحن موبيليس</div></a>
-      <a href="ooredoo.html" class="card-link"><div class="card daily-card">شحن أوريدو</div></a>
-      <a href="djezzy.html" class="card-link"><div class="card daily-card">شحن جيزي</div></a>
+      <a href="culture.html" class="card-link"><div class="card">رياضيات</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علوم</div></a>
+      <a href="culture.html" class="card-link"><div class="card">فيزياء</div></a>
+      <a href="culture.html" class="card-link"><div class="card">عربية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">فرنسية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">إنجليزية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علوم إسلامية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علم النفس</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علم الاجتماع</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علوم الرياضة</div></a>
     </div>
 
-    <h2 class="section-title">📚 التعليم والامتحانات</h2>
-    <div class="categories">
-      <a href="exams-primary.html" class="card-link"><div class="card edu-card">الطور الابتدائي</div></a>
-      <a href="exams-middle.html" class="card-link"><div class="card edu-card">الطور المتوسط</div></a>
-      <a href="exams-secondary.html" class="card-link"><div class="card edu-card">الطور الثانوي</div></a>
-      <a href="training.html" class="card-link"><div class="card edu-card">التكوين المهني</div></a>
-    </div>
+    <!-- Ask Problem -->
+    <h2 class="ask-title">❓ اطرح مشكلتك</h2>
 
-    <div style="text-align: center; margin-top: 50px;">
-      <h2 class="ask-title">❓ اطرح مشكلتك</h2>
-      <button class="send" onclick="openForm()">إرسال المشكلة</button>
-      <div class="contact">
-        <a href="https://wa.me/213671720653" class="contact-btn whatsapp">واتساب</a>
-        <a href="https://t.me/RabiaAameur" class="contact-btn telegram">تيليجرام</a>
+    <p style="margin-bottom:10px;color:#555">
+      سيتم توجيهك إلى نموذج آمن لإرسال مشكلتك
+    </p>
+
+    <button class="send" onclick="openForm()">إرسال المشكلة</button>
+
+    <!-- Contact -->
+    <div class="contact">
+      <h2 class="section-title">📞 اتصل بنا</h2>
+      <div class="contact-icons">
+        <a href="https://wa.me/213671720653" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="55">
+        </a>
+        <a href="https://t.me/RabiaAameur" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="55">
+        </a>
       </div>
     </div>
+
   </div>
 
-  <script src="app.js"></script>
+  <script>
+    const enterBtn = document.getElementById("enterBtn");
+    const splash = document.getElementById("splash");
+    const main = document.getElementById("mainContent");
+
+    enterBtn.onclick = () => {
+      splash.style.display = "none";
+      main.style.display = "block";
+    };
+
+    function openForm() {
+      window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform",
+        "_blank"
+      );
+    }
+  </script>
+
 </body>
 </html>

@@ -7,16 +7,17 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<script src="App.js"></script>
+
 <body>
 
   <!-- Splash Screen -->
   <div id="splash">
-<h1 class="typing">مرحبا بك في منصة Ali.dz</h1>    <button id="enterBtn">دخول</button>
+    <h1 id="typingText"></h1>
+    <button id="enterBtn">دخول</button>
   </div>
 
   <!-- Main Content -->
-  <div id="mainContent">
+  <div id="mainContent" style="display:none">
 
     <h2 class="section-title">
       <span class="logo-icon">🟢</span>
@@ -36,62 +37,11 @@
       <a href="payment.html" class="card-link"><div class="card">الدفع الإلكتروني</div></a>
     </div>
 
-    <h2 class="section-title">📚 ثقف نفسك</h2>
-
-    <div class="categories">
-      <a href="culture.html" class="card-link"><div class="card">رياضيات</div></a>
-      <a href="culture.html" class="card-link"><div class="card">علوم</div></a>
-      <a href="culture.html" class="card-link"><div class="card">فيزياء</div></a>
-      <a href="culture.html" class="card-link"><div class="card">عربية</div></a>
-      <a href="culture.html" class="card-link"><div class="card">فرنسية</div></a>
-      <a href="culture.html" class="card-link"><div class="card">إنجليزية</div></a>
-      <a href="culture.html" class="card-link"><div class="card">علوم إسلامية</div></a>
-      <a href="culture.html" class="card-link"><div class="card">علم النفس</div></a>
-      <a href="culture.html" class="card-link"><div class="card">علم الاجتماع</div></a>
-      <a href="culture.html" class="card-link"><div class="card">علوم الرياضة</div></a>
-    </div>
-
-    <!-- Ask Problem -->
     <h2 class="ask-title">❓ اطرح مشكلتك</h2>
-
-    <p style="margin-bottom:10px;color:#555">
-      سيتم توجيهك إلى نموذج آمن لإرسال مشكلتك
-    </p>
-
     <button class="send" onclick="openForm()">إرسال المشكلة</button>
-
-    <!-- Contact -->
-    <div class="contact">
-      <h2 class="section-title">📞 اتصل بنا</h2>
-      <div class="contact-icons">
-        <a href="https://wa.me/213671720653" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="55">
-        </a>
-        <a href="https://t.me/RabiaAameur" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="55">
-        </a>
-      </div>
-    </div>
 
   </div>
 
-  <script>
-    const enterBtn = document.getElementById("enterBtn");
-    const splash = document.getElementById("splash");
-    const main = document.getElementById("mainContent");
-
-    enterBtn.onclick = () => {
-      splash.style.display = "none";
-      main.style.display = "block";
-    };
-
-    function openForm() {
-      window.open(
-        "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform",
-        "_blank"
-      );
-    }
-  </script>
-
+  <script src="App.js"></script>
 </body>
 </html>

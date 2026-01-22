@@ -1,28 +1,26 @@
-const text = "مرحبا بكم في منصة Ali.dz";
-const speed = 100; // سرعة الكتابة (100ms)
+,const text = "مرحبا بكم في منصة Ali.dz";
+const typingElement = document.getElementById("typingText");
 let index = 0;
+const speed = 4000 / text.length; // 4 ثواني
 
 function typeWriter() {
   if (index < text.length) {
-    document.getElementById("typingText").innerHTML += text.charAt(index);
+    typingElement.textContent += text.charAt(index);
     index++;
     setTimeout(typeWriter, speed);
   }
 }
 
-// تشغيل الأنيميشن عند فتح الصفحة
-document.addEventListener("DOMContentLoaded", typeWriter);document.addEventListener("DOMContentLoaded", () => {
-  const enterBtn = document.getElementById("enterBtn");
-  const splash = document.getElementById("splash");
-  const main = document.getElementById("mainContent");
+typeWriter();
 
-  if (enterBtn) {
-    enterBtn.onclick = () => {
-      splash.style.display = "none";
-      main.style.display = "block";
-    };
-  }
-});
+const enterBtn = document.getElementById("enterBtn");
+const splash = document.getElementById("splash");
+const main = document.getElementById("mainContent");
+
+enterBtn.onclick = () => {
+  splash.style.display = "none";
+  main.style.display = "block";
+};
 
 function openForm() {
   window.open(

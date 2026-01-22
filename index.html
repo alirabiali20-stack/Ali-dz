@@ -2,144 +2,57 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>Ali.dz - المنصة الشاملة</title>
+  <title>Ali.dz | المنصة الشاملة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    /* تحسينات إضافية للتصميم والألوان */
-    body { font-family: 'Cairo', sans-serif; background-color: #f8f9fa; }
-    
-    .section-title { 
-      border-right: 5px solid #27ae60; 
-      padding-right: 10px; 
-      margin-top: 30px; 
-      color: #2c3e50;
-    }
-
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 15px;
-      padding: 10px 0;
-    }
-
-    .card {
-      background: white;
-      padding: 20px 10px;
-      border-radius: 15px;
-      text-align: center;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      transition: 0.3s;
-      border-bottom: 5px solid #ddd;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #333;
-    }
-
-    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
-    .card-link { text-decoration: none; }
-
-    /* ألوان البطاقات حسب النوع */
-    .btn-admin { border-bottom-color: #3498db; }    /* أزرق */
-    .btn-daily { border-bottom-color: #2ecc71; }    /* أخضر */
-    .btn-visa  { border-bottom-color: #9b59b6; }    /* بنفسجي */
-    .btn-edu   { border-bottom-color: #f1c40f; }    /* أصفر */
-    .btn-job   { border-bottom-color: #e74c3c; }    /* أحمر */
-    .btn-tech  { border-bottom-color: #34495e; }    /* رمادي */
-
-    #mainContent { display: none; padding: 20px; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-  <div id="splash" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, #27ae60, #2ecc71); color: white;">
+  <div id="splash">
     <h1 class="typing">مرحبا بك في منصة Ali.dz</h1>
-    <button id="enterBtn" style="padding: 10px 40px; font-size: 1.2rem; border-radius: 30px; border: none; cursor: pointer; font-weight: bold; background: white; color: #27ae60;">دخول</button>
+    <button id="enterBtn">دخول المنصة</button>
   </div>
 
   <div id="mainContent">
+    <input type="text" id="searchInput" class="search" placeholder="🔍 ابحث عن أي خدمة...">
 
-    <input type="text" class="search" placeholder="🔍 ابحث داخل المنصة..." style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 20px; font-family: 'Cairo';">
-
-    <h2 class="section-title">🏛️ الخدمات الإدارية والقانونية</h2>
+    <h2 class="section-title">🏛️ الخدمات الإدارية</h2>
     <div class="categories">
-      <a href="admin.html" class="card-link"><div class="card btn-admin">الخدمات الإدارية</div></a>
-      <a href="civil.html" class="card-link"><div class="card btn-admin">الحالة المدنية</div></a>
-      <a href="social.html" class="card-link"><div class="card btn-admin">الخدمات الاجتماعية</div></a>
-      <a href="casier.html" class="card-link"><div class="card btn-admin">وزارة العدل</div></a>
-      <a href="housing.html" class="card-link"><div class="card btn-admin">السكن والعمران</div></a>
-      <a href="payment.html" class="card-link"><div class="card btn-admin">الدفع الإلكتروني</div></a>
+      <a href="admin.html" class="card-link"><div class="card admin-card">الخدمات الإدارية</div></a>
+      <a href="civil.html" class="card-link"><div class="card admin-card">الحالة المدنية</div></a>
+      <a href="casier.html" class="card-link"><div class="card admin-card">وزارة العدل</div></a>
+      <a href="housing.html" class="card-link"><div class="card admin-card">السكن والعمران</div></a>
+      <a href="payment.html" class="card-link"><div class="card admin-card">الدفع الإلكتروني</div></a>
     </div>
 
     <h2 class="section-title">🧭 الخدمات اليومية والشحن</h2>
     <div class="categories">
-      <a href="daily.html" class="card-link"><div class="card btn-daily">الخدمات اليومية</div></a>
-      <a href="health.html" class="card-link"><div class="card btn-daily">الصحة</div></a>
-      <a href="transport.html" class="card-link"><div class="card btn-daily">النقل (ETT)</div></a>
-      <a href="mobilis.html" class="card-link"><div class="card btn-daily">شحن موبيليس</div></a>
-      <a href="ooredoo.html" class="card-link"><div class="card btn-daily">شحن أوريدو</div></a>
-      <a href="djezzy.html" class="card-link"><div class="card btn-daily">شحن جيزي</div></a>
+      <a href="daily.html" class="card-link"><div class="card daily-card">الخدمات اليومية</div></a>
+      <a href="health.html" class="card-link"><div class="card daily-card">الصحة</div></a>
+      <a href="mobilis.html" class="card-link"><div class="card daily-card">شحن موبيليس</div></a>
+      <a href="ooredoo.html" class="card-link"><div class="card daily-card">شحن أوريدو</div></a>
+      <a href="djezzy.html" class="card-link"><div class="card daily-card">شحن جيزي</div></a>
     </div>
 
     <h2 class="section-title">📚 التعليم والامتحانات</h2>
     <div class="categories">
-      <a href="education.html" class="card-link"><div class="card btn-edu">التربية والتعليم</div></a>
-      <a href="training.html" class="card-link"><div class="card btn-edu">التكوين المهني</div></a>
-      <a href="exams-primary.html" class="card-link"><div class="card btn-edu">الطور الابتدائي</div></a>
-      <a href="exams-middle.html" class="card-link"><div class="card btn-edu">الطور المتوسط</div></a>
-      <a href="exams-secondary.html" class="card-link"><div class="card btn-edu">الطور الثانوي</div></a>
-      <a href="forms.html" class="card-link"><div class="card btn-edu">الاستمارات</div></a>
+      <a href="exams-primary.html" class="card-link"><div class="card edu-card">الطور الابتدائي</div></a>
+      <a href="exams-middle.html" class="card-link"><div class="card edu-card">الطور المتوسط</div></a>
+      <a href="exams-secondary.html" class="card-link"><div class="card edu-card">الطور الثانوي</div></a>
+      <a href="training.html" class="card-link"><div class="card edu-card">التكوين المهني</div></a>
     </div>
 
-    <h2 class="section-title">💡 ثقف نفسك</h2>
-    <div class="categories">
-      <a href="culture.html" class="card-link"><div class="card btn-tech">رياضيات</div></a>
-      <a href="culture.html" class="card-link"><div class="card btn-tech">علوم</div></a>
-      <a href="culture.html" class="card-link"><div class="card btn-tech">فيزياء</div></a>
-      <a href="culture.html" class="card-link"><div class="card btn-tech">عربية</div></a>
-      <a href="culture.html" class="card-link"><div class="card btn-tech">علم النفس</div></a>
-    </div>
-
-    <h2 class="section-title">✈️ السفر وفرص العمل</h2>
-    <div class="categories">
-      <a href="jobs.html" class="card-link"><div class="card btn-job">عروض العمل</div></a>
-      <a href="visa-germany.html" class="card-link"><div class="card btn-visa">ألمانيا</div></a>
-      <a href="visa-spain.html" class="card-link"><div class="card btn-visa">إسبانيا</div></a>
-      <a href="visa-turkey.html" class="card-link"><div class="card btn-visa">تركيا</div></a>
-      <a href="visa-canada.html" class="card-link"><div class="card btn-visa">كندا</div></a>
-    </div>
-
-    <div class="contact" style="text-align: center; margin-top: 50px;">
+    <div style="text-align: center; margin-top: 50px;">
       <h2 class="ask-title">❓ اطرح مشكلتك</h2>
-      <button class="send" onclick="openForm()" style="background: #27ae60; color: white; border: none; padding: 10px 30px; border-radius: 10px; cursor: pointer; font-family: 'Cairo';">إرسال المشكلة</button>
-      
-      <div class="contact-icons" style="margin-top: 20px;">
-        <a href="https://wa.me/213671720653" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="50"></a>
-        <a href="https://t.me/RabiaAameur" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="50"></a>
+      <button class="send" onclick="openForm()">إرسال المشكلة</button>
+      <div class="contact">
+        <a href="https://wa.me/213671720653" class="contact-btn whatsapp">واتساب</a>
+        <a href="https://t.me/RabiaAameur" class="contact-btn telegram">تيليجرام</a>
       </div>
     </div>
-
   </div>
 
-  <script>
-    const enterBtn = document.getElementById("enterBtn");
-    const splash = document.getElementById("splash");
-    const main = document.getElementById("mainContent");
-
-    enterBtn.onclick = () => {
-      splash.style.display = "none";
-      main.style.display = "block";
-    };
-
-    function openForm() {
-      window.open("https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform", "_blank");
-    }
-  </script>
-
+  <script src="app.js"></script>
 </body>
 </html>

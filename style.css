@@ -351,3 +351,65 @@ body {
 .overlay.show {
   display: block;
 }
+/* تنسيقات عامة */
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+}
+
+#mainContent {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    border-right: 5px solid #27ae60;
+    padding-right: 15px;
+    margin: 30px 0 15px;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+/* تصميم الشبكة للبطاقات */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* تصميم البطاقة (The Card) */
+.card {
+    background: white;
+    padding: 20px 10px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    color: #34495e;
+    border-bottom: 4px solid #ddd; /* لون افتراضي */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+/* ألوان مخصصة لكل نوع من البطاقات */
+.admin-card { border-bottom-color: #3498db; }    /* أزرق للخدمات */
+.edu-card { border-bottom-color: #e67e22; }      /* برتقالي للتعليم */
+.daily-card { border-bottom-color: #2ecc71; }    /* أخضر لليوميات */
+.visa-card { border-bottom-color: #9b59b6; }     /* بنفسجي للسفر */
+.job-card { border-bottom-color: #e74c3c; }      /* أحمر للعمل */

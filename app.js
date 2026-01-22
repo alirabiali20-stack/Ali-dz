@@ -1,3 +1,19 @@
-// Remove splash screen after animation           window.addEventListener("load", () => {             setTimeout(() => {                                  const splash = document.getElementById("splash");                                                   if (splash) splash.remove();                    }, 4000);                                       });// Splash Screen - show once                   document.addEventListener("DOMContentLoaded", () => {                                                 const splash = document.getElementById("splash");                                                                                                     if (localStorage.getItem("ali_splash_seen")) {
-    splash.style.display = "none";                  } else {                                            setTimeout(() => {
-      splash.style.opacity = "0";                       splash.style.transition = "opacity 0.6s ease";                                                                                                        setTimeout(() => {                                  splash.style.display = "none";                    localStorage.setItem("ali_splash_seen", "true");                                                  }, 600);                                                                                          }, 2500);                                       }                                               });function searchCards() {                         let input = document.getElementById("search").value.toLowerCase();                                  let cards = document.querySelectorAll(".card");                                                     cards.forEach(card => {                             card.style.display = card.innerText.toLowerCase().includes(input)                                     ? "block"                                         : "none";                                     });                                             }
+document.addEventListener("DOMContentLoaded", () => {
+  const enterBtn = document.getElementById("enterBtn");
+  const splash = document.getElementById("splash");
+  const main = document.getElementById("mainContent");
+
+  if (enterBtn) {
+    enterBtn.onclick = () => {
+      splash.style.display = "none";
+      main.style.display = "block";
+    };
+  }
+});
+
+function openForm() {
+  window.open(
+    "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform",
+    "_blank"
+  );
+}

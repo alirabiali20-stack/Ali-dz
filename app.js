@@ -1,4 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
+const text = "مرحبا بكم في منصة Ali.dz";
+const speed = 100; // سرعة الكتابة (100ms)
+let index = 0;
+
+function typeWriter() {
+  if (index < text.length) {
+    document.getElementById("typingText").innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+// تشغيل الأنيميشن عند فتح الصفحة
+document.addEventListener("DOMContentLoaded", typeWriter);document.addEventListener("DOMContentLoaded", () => {
   const enterBtn = document.getElementById("enterBtn");
   const splash = document.getElementById("splash");
   const main = document.getElementById("mainContent");

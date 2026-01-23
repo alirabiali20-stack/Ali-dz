@@ -1,59 +1,11 @@
-const text = "مرحبا بكم في منصة Ali.dz";
-const typingElement = document.getElementById("typingText");
-let index = 0;
-const speed = 4000 / text.length; // 4 ثواني
+😉If You Don't🪫Use🇩🇿 It🔋You Will 🔜Lose It🇩🇪:
+/* عند الفتح */                                   .side-menu.open {                                   right: 0;                                       }                                                                                                   /* الخلفية */                                     .overlay {                                          position: fixed;                                  top: 0;                                           right: 0;                                         width: 100%;                                      height: 100%;
+  background: rgba(0,0,0,0.3);                      display: none;                                    z-index: 1000;
+}                                                                                                   .overlay.show {                                     display: block;                                 }                                                 /* تنسيقات عامة */                                body {                                                font-family: 'Cairo', sans-serif;                 background-color: #f4f7f6;                        margin: 0;                                        padding: 0;                                   }                                                                                                   #mainContent {                                        padding: 20px;                                    max-width: 1200px;                                margin: 0 auto;                               }                                                                                                   .section-title {                                      border-right: 5px solid #27ae60;                  padding-right: 15px;                              margin: 30px 0 15px;                              color: #2c3e50;                                   font-size: 1.4rem;                            }                                                                                                   /* تصميم الشبكة للبطاقات */
+.categories {                                         display: grid;                                    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));                                        gap: 15px;                                        margin-bottom: 30px;                          }                                                                                                   /* تصميم البطاقة (The Card) */                    .card {                                               background: white;                                padding: 20px 10px;                               border-radius: 12px;                              text-align: center;                               box-shadow: 0 4px 6px rgba(0,0,0,0.05);           transition: all 0.3s ease;                        font-weight: bold;                                color: #34495e;                                   border-bottom: 4px solid #ddd; /* لون افتراضي */                                                    height: 100%;                                     display: flex;                                    align-items: center;                              justify-content: center;                      }                                                                                                   .card:hover {                                         transform: translateY(-5px);                      box-shadow: 0 8px 15px rgba(0,0,0,0.1);       }                                                 
+.card-link {                                          text-decoration: none;                        }
+                                                  /* ألوان مخصصة لكل نوع من البطاقات */             .admin-card { border-bottom-color: #3498db; }    /* أزرق للخدمات */                                 .edu-card { border-bottom-color: #e67
 
-function typeWriter() {
-  if (index < text.length) {
-    typingElement.textContent += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, speed);
-  }
-}
-
-typeWriter();
-
-const enterBtn = document.getElementById("enterBtn");
-const splash = document.getElementById("splash");
-const main = document.getElementById("mainContent");
-
-enterBtn.onclick = () => {
-  splash.style.display = "none";
-  main.style.display = "block";
-};
-
-function openForm() {
-  window.open(
-    "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform",
-    "_blank"
-  );
-}document.addEventListener("DOMContentLoaded", () => {
-  const text = "مرحبا بكم في منصة Ali.dz";
-  const element = document.querySelector("#splash h1");
-  let index = 0;
-
-  element.textContent = "";
-
-  const duration = 4000; // 4 ثواني
-  const speed = duration / text.length;
-
-  function typeWriter() {
-    if (index < text.length) {
-      element.textContent += text.charAt(index);
-      index++;
-      setTimeout(typeWriter, speed);
-    }
-  }
-
-  typeWriter();
-});
-
-/* زر الدخول */
-const enterBtn = document.getElementById("enterBtn");
-const splash = document.getElementById("splash");
-const main = document.getElementById("mainContent");
-
-enterBtn.onclick = () => {
-  splash.style.display = "none";
-  main.style.display = "block";
-};
+// Remove splash screen after animation           window.addEventListener("load", () => {             setTimeout(() => {                                  const splash = document.getElementById("splash");                                                   if (splash) splash.remove();                    }, 4000);                                       });// Splash Screen - show once                   document.addEventListener("DOMContentLoaded", () => {                                                 const splash = document.getElementById("splash");                                                                                                     if (localStorage.getItem("ali_splash_seen")) {
+    splash.style.display = "none";                  } else {                                            setTimeout(() => {
+      splash.style.opacity = "0";                       splash.style.transition = "opacity 0.6s ease";                                                                                                        setTimeout(() => {                                  splash.style.display = "none";                    localStorage.setItem("ali_splash_seen", "true");                                                  }, 600);                                                                                          }, 2500);                                       }                                               });function searchCards() {                         let input = document.getElementById("search").value.toLowerCase();                                  let cards = document.querySelectorAll(".card");                                                     cards.forEach(card => {                             card.style.display = card.innerText.toLowerCase().includes(input)                                     ? "block"                                         : "none";                                     });                                             }

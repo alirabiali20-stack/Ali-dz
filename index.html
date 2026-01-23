@@ -12,12 +12,12 @@
 
   <!-- Splash Screen -->
   <div id="splash">
-    <h1 id="typingText"></h1>
+    <h1 class="typing">مرحبا بك في منصة Ali.dz</h1>
     <button id="enterBtn">دخول</button>
   </div>
 
   <!-- Main Content -->
-  <div id="mainContent" style="display:none">
+  <div id="mainContent">
 
     <h2 class="section-title">
       <span class="logo-icon">🟢</span>
@@ -37,11 +37,102 @@
       <a href="payment.html" class="card-link"><div class="card">الدفع الإلكتروني</div></a>
     </div>
 
+    <h2 class="section-title">📚 ثقف نفسك</h2>
+<h2 class="section-title">📱 شحن الرصيد</h2>
+<div class="categories">
+  <a href="mobilis.html" class="card-link"><div class="card">شحن موبيليس</div></a>
+  <a href="ooredoo.html" class="card-link"><div class="card">شحن أوريدو</div></a>
+  <a href="djezzy.html" class="card-link"><div class="card">شحن جيزي</div></a>
+</div>
+
+<h2 class="section-title">💼 فرص العمل</h2>
+<div class="categories">
+  <a href="jobs.html" class="card-link"><div class="card">عروض العمل</div></a>
+</div>
+
+<h2 class="section-title">✈️ قسم التأشيرات</h2>
+<div class="categories">
+  <a href="visa-germany.html" class="card-link"><div class="card">ألمانيا</div></a>
+  <a href="visa-spain.html" class="card-link"><div class="card">إسبانيا</div></a>
+  <a href="visa-italy.html" class="card-link"><div class="card">إيطاليا</div></a>
+  <a href="visa-turkey.html" class="card-link"><div class="card">تركيا</div></a>
+  <a href="visa-netherlands.html" class="card-link"><div class="card">هولندا</div></a>
+  <a href="visa-uk.html" class="card-link"><div class="card">بريطانيا</div></a>
+  <a href="visa-usa.html" class="card-link"><div class="card">أمريكا</div></a>
+  <a href="visa-canada.html" class="card-link"><div class="card">كندا</div></a>
+</div>
+
+<h2 class="section-title">📝 الاستمارات</h2>
+<div class="categories">
+  <a href="forms.html" class="card-link"><div class="card">استمارات قابلة للطباعة</div></a>
+</div>
+
+<h2 class="section-title">📚 الفروض والاختبارات</h2>
+<div class="categories">
+  <a href="exams-primary.html" class="card-link"><div class="card">الطور الابتدائي</div></a>
+  <a href="exams-middle.html" class="card-link"><div class="card">الطور المتوسط</div></a>
+  <a href="exams-secondary.html" class="card-link"><div class="card">الطور الثانوي</div></a>
+</div>
+    <div class="categories">
+      <a href="culture.html" class="card-link"><div class="card">رياضيات</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علوم</div></a>
+      <a href="culture.html" class="card-link"><div class="card">فيزياء</div></a>
+      <a href="culture.html" class="card-link"><div class="card">عربية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">فرنسية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">إنجليزية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علوم إسلامية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علم النفس</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علم الاجتماع</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علوم الرياضة</div></a>
+    </div>
+
+    <!-- Ask Problem -->
     <h2 class="ask-title">❓ اطرح مشكلتك</h2>
+
+    <p style="margin-bottom:10px;color:#555">
+      سيتم توجيهك إلى نموذج آمن لإرسال مشكلتك
+    </p>
+
     <button class="send" onclick="openForm()">إرسال المشكلة</button>
+
+    <!-- Contact -->
+    <div class="contact">
+      <h2 class="section-title">📞 اتصل بنا</h2>
+      <div class="contact-icons">
+        <a href="https://wa.me/213671720653" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="55">
+        </a>
+        <a href="https://t.me/RabiaAameur" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="55">
+        </a>
+      </div>
+    </div>
 
   </div>
 
-  <script src="App.js"></script>
+  <script>
+    const enterBtn = document.getElementById("enterBtn");
+    const splash = document.getElementById("splash");
+    const main = document.getElementById("mainContent");
+
+    enterBtn.onclick = () => {
+      splash.style.display = "none";
+      main.style.display = "block";
+    };
+
+    function openForm() {
+      window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform",
+        "_blank"
+      );
+    }
+  </script>
+
 </body>
 </html>
+<h2 class="section-title">🧭 الخدمات اليومية</h2>
+<div class="categories">
+  <a href="daily.html" class="card-link"><div class="card">الخدمات اليومية</div></a>
+  <a href="health.html" class="card-link"><div class="card">الصحة</div></a>
+  <a href="transport.html" class="card-link"><div class="card">النقل (ETT)</div></a>
+</div>

@@ -4,90 +4,54 @@
   <meta charset="UTF-8">
   <title>Ali.dz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- Splash Screen -->
-<div id="splash">
-  <h1 id="typingText"></h1>
-  <button id="enterBtn">دخول</button>
-</div>
-
-<!-- Main Content -->
-<div id="mainContent">
-
-  <h2 class="section-title">🟢 الخدمات المتاحة</h2>
-  <input type="text" class="search" placeholder="🔍 ابحث داخل المنصة">
-
-  <!-- الخدمات اليومية -->
-  <h2 class="section-title">🧭 الخدمات اليومية</h2>
-  <div class="categories">
-    <a class="card-link" href="#"><div class="card">الخدمات اليومية</div></a>
-    <a class="card-link" href="#"><div class="card">الصحة</div></a>
-    <a class="card-link" href="#"><div class="card">النقل (ETT)</div></a>
+  <!-- Splash Screen -->
+  <div id="splash">
+    <h1 class="typing">مرحبا بكم في منصة Ali.dz</h1>
+    <button id="enterBtn">دخول</button>
   </div>
 
-  <!-- شحن الرصيد -->
-  <h2 class="section-title">📱 شحن الرصيد</h2>
-  <div class="categories">
-    <a class="card-link" href="#"><div class="card">موبيليس</div></a>
-    <a class="card-link" href="#"><div class="card">أوريدو</div></a>
-    <a class="card-link" href="#"><div class="card">جيزي</div></a>
-  </div>
+  <!-- Main Content -->
+  <div id="mainContent">
 
-  <!-- فرص العمل -->
-  <h2 class="section-title">💼 فرص العمل</h2>
-  <div class="categories">
-    <a class="card-link" href="#"><div class="card">عروض العمل</div></a>
-  </div>
+    <h2 class="section-title">🟢 الخدمات المتاحة</h2>
 
-  <!-- التأشيرات -->
-  <h2 class="section-title">✈️ قسم التأشيرات</h2>
-  <div class="categories">
-    <div class="card">ألمانيا</div>
-    <div class="card">إسبانيا</div>
-    <div class="card">إيطاليا</div>
-    <div class="card">تركيا</div>
-    <div class="card">هولندا</div>
-    <div class="card">بريطانيا</div>
-    <div class="card">أمريكا</div>
-    <div class="card">كندا</div>
-  </div>
+    <input type="text" class="search" placeholder="🔍 ابحث داخل المنصة">
 
-  <!-- الاستمارات -->
-  <h2 class="section-title">📝 الاستمارات</h2>
-  <div class="categories">
-    <div class="card">استمارات قابلة للطباعة</div>
-  </div>
-
-  <!-- الفروض والاختبارات -->
-  <h2 class="section-title">📚 الفروض والاختبارات</h2>
-  <div class="categories">
-    <div class="card">الطور الابتدائي</div>
-    <div class="card">الطور المتوسط</div>
-    <div class="card">الطور الثانوي</div>
-  </div>
-
-  <!-- اطرح مشكلتك -->
-  <h2 class="ask-title">❓ اطرح مشكلتك</h2>
-  <p style="color:#555">سيتم توجيهك إلى نموذج آمن</p>
-  <button class="send" onclick="openForm()">إرسال المشكلة</button>
-
-  <!-- تواصل -->
-  <div class="contact">
-    <h2 class="section-title">📞 اتصل بنا</h2>
-    <div class="contact-icons">
-      <a href="https://wa.me/213671720653" target="_blank">WhatsApp</a> |
-      <a href="https://t.me/RabiaAameur" target="_blank">Telegram</a>
+    <div class="categories">
+      <div class="card">الخدمات الإدارية</div>
+      <div class="card">الحالة المدنية</div>
+      <div class="card">الخدمات الاجتماعية</div>
+      <div class="card">وزارة العدل</div>
+      <div class="card">السكن والعمران</div>
+      <div class="card">التربية والتعليم</div>
+      <div class="card">التكوين المهني</div>
+      <div class="card">الدفع الإلكتروني</div>
     </div>
+
+    <h2 class="section-title">📚 ثقف نفسك</h2>
+
+    <div class="categories">
+      <div class="card">رياضيات</div>
+      <div class="card">علوم</div>
+      <div class="card">فيزياء</div>
+      <div class="card">عربية</div>
+      <div class="card">فرنسية</div>
+      <div class="card">إنجليزية</div>
+    </div>
+
+    <h2 class="ask-title">❓ اطرح مشكلتك</h2>
+    <p style="color:#555">سيتم توجيهك إلى نموذج آمن</p>
+
+    <button class="send" onclick="openForm()">إرسال المشكلة</button>
+
   </div>
 
-</div>
-
-<script src="app.js"></script>
+  <script src="App.js"></script>
 </body>
 </html>

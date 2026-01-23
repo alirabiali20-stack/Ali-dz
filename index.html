@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Ali.dz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -12,7 +13,7 @@
 
 <!-- Splash Screen -->
 <div id="splash">
-  <h1 class="typing">مرحبا بك في منصة Ali.dz</h1>
+  <h1 id="typingText"></h1>
   <button id="enterBtn">دخول</button>
 </div>
 
@@ -25,23 +26,23 @@
   <!-- الخدمات اليومية -->
   <h2 class="section-title">🧭 الخدمات اليومية</h2>
   <div class="categories">
-    <div class="card">الخدمات اليومية</div>
-    <div class="card">الصحة</div>
-    <div class="card">النقل (ETT)</div>
+    <a class="card-link" href="#"><div class="card">الخدمات اليومية</div></a>
+    <a class="card-link" href="#"><div class="card">الصحة</div></a>
+    <a class="card-link" href="#"><div class="card">النقل (ETT)</div></a>
   </div>
 
   <!-- شحن الرصيد -->
   <h2 class="section-title">📱 شحن الرصيد</h2>
   <div class="categories">
-    <div class="card">شحن موبيليس</div>
-    <div class="card">شحن أوريدو</div>
-    <div class="card">شحن جيزي</div>
+    <a class="card-link" href="#"><div class="card">موبيليس</div></a>
+    <a class="card-link" href="#"><div class="card">أوريدو</div></a>
+    <a class="card-link" href="#"><div class="card">جيزي</div></a>
   </div>
 
   <!-- فرص العمل -->
   <h2 class="section-title">💼 فرص العمل</h2>
   <div class="categories">
-    <div class="card">عروض العمل</div>
+    <a class="card-link" href="#"><div class="card">عروض العمل</div></a>
   </div>
 
   <!-- التأشيرات -->
@@ -63,7 +64,7 @@
     <div class="card">استمارات قابلة للطباعة</div>
   </div>
 
-  <!-- التعليم -->
+  <!-- الفروض والاختبارات -->
   <h2 class="section-title">📚 الفروض والاختبارات</h2>
   <div class="categories">
     <div class="card">الطور الابتدائي</div>
@@ -71,31 +72,22 @@
     <div class="card">الطور الثانوي</div>
   </div>
 
-  <!-- ثقف نفسك -->
-  <h2 class="section-title">📘 ثقف نفسك</h2>
-  <div class="categories">
-    <div class="card">رياضيات</div>
-    <div class="card">علوم</div>
-    <div class="card">فيزياء</div>
-    <div class="card">لغات</div>
-    <div class="card">علوم إسلامية</div>
-  </div>
-
-  <!-- مشكلة -->
+  <!-- اطرح مشكلتك -->
   <h2 class="ask-title">❓ اطرح مشكلتك</h2>
+  <p style="color:#555">سيتم توجيهك إلى نموذج آمن</p>
   <button class="send" onclick="openForm()">إرسال المشكلة</button>
 
   <!-- تواصل -->
   <div class="contact">
     <h2 class="section-title">📞 اتصل بنا</h2>
     <div class="contact-icons">
-      <a href="https://wa.me/213671720653" target="_blank">واتساب</a>
-      <a href="https://t.me/RabiaAameur" target="_blank">تلغرام</a>
+      <a href="https://wa.me/213671720653" target="_blank">WhatsApp</a> |
+      <a href="https://t.me/RabiaAameur" target="_blank">Telegram</a>
     </div>
   </div>
 
 </div>
 
-<script src="script.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

@@ -1,10 +1,80 @@
-/* عند الفتح */                                   .side-menu.open {                                   right: 0;                                       }                                                                                                   /* الخلفية */                                     .overlay {                                          position: fixed;                                  top: 0;                                           right: 0;                                         width: 100%;                                      height: 100%;
-  background: rgba(0,0,0,0.3);                      display: none;                                    z-index: 1000;
-}                                                                                                   .overlay.show {                                     display: block;                                 }                                                 /* تنسيقات عامة */                                body {                                                font-family: 'Cairo', sans-serif;                 background-color: #f4f7f6;                        margin: 0;                                        padding: 0;                                   }                                                                                                   #mainContent {                                        padding: 20px;                                    max-width: 1200px;                                margin: 0 auto;                               }                                                                                                   .section-title {                                      border-right: 5px solid #27ae60;                  padding-right: 15px;                              margin: 30px 0 15px;                              color: #2c3e50;                                   font-size: 1.4rem;                            }                                                                                                   /* تصميم الشبكة للبطاقات */
-.categories {                                         display: grid;                                    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));                                        gap: 15px;                                        margin-bottom: 30px;                          }                                                                                                   /* تصميم البطاقة (The Card) */                    .card {                                               background: white;                                padding: 20px 10px;                               border-radius: 12px;                              text-align: center;                               box-shadow: 0 4px 6px rgba(0,0,0,0.05);           transition: all 0.3s ease;                        font-weight: bold;                                color: #34495e;                                   border-bottom: 4px solid #ddd; /* لون افتراضي */                                                    height: 100%;                                     display: flex;                                    align-items: center;                              justify-content: center;                      }                                                                                                   .card:hover {                                         transform: translateY(-5px);                      box-shadow: 0 8px 15px rgba(0,0,0,0.1);       }                                                 
-.card-link {                                          text-decoration: none;                        }
-                                                  /* ألوان مخصصة لكل نوع من البطاقات */             .admin-card { border-bottom-color: #3498db; }    /* أزرق للخدمات */                                 .edu-card { border-bottom-color: #e67
+document.addEventListener("DOMContentLoaded", () => {
+  // --- العناصر الأساسية ---
+  const enterBtn = document.getElementById("enterBtn");
+  const splash = document.getElementById("splash");
+  const main = document.getElementById("mainContent");
+  const searchInput = document.querySelector(".search");
+  const cards = document.querySelectorAll(".categories .card-link");
 
-// Remove splash screen after animation           window.addEventListener("load", () => {             setTimeout(() => {                                  const splash = document.getElementById("splash");                                                   if (splash) splash.remove();                    }, 4000);                                       });// Splash Screen - show once                   document.addEventListener("DOMContentLoaded", () => {                                                 const splash = document.getElementById("splash");                                                                                                     if (localStorage.getItem("ali_splash_seen")) {
-    splash.style.display = "none";                  } else {                                            setTimeout(() => {
-      splash.style.opacity = "0";                       splash.style.transition = "opacity 0.6s ease";                                                                                                        setTimeout(() => {                                  splash.style.display = "none";                    localStorage.setItem("ali_splash_seen", "true");                                                  }, 600);                                                                                          }, 2500);                                       }                                               });function searchCards() {                         let input = document.getElementById("search").value.toLowerCase();                                  let cards = document.querySelectorAll(".card");                                                     cards.forEach(card => {                             card.style.display = card.innerText.toLowerCase().includes(input)                                     ? "block"                                         : "none";                                     });                                             }
+  // --- 1. التحكم في شاشة الترحيب ---
+  if (enterBtn) {
+    enterBtn.onclick = () => {
+      // إخفاء شاشة الترحيب وإظهار المحتوى الرئيسي بسلاسة
+      splash.style.transition = "opacity 0.5s ease";
+      splash.style.opacity = "0";
+      
+      setTimeout(() => {
+        splash.style.display = "none";
+        main.style.display = "block";
+        window.scrollTo(0, 0); // العودة لأعلى الصفحة عند الدخول
+      }, 500);
+    };
+  }
+
+  // --- 2. نظام البحث الذكي ---
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      const term = e.target.value.toLowerCase().trim();
+      
+      cards.forEach(link => {
+        const cardText = link.textContent.toLowerCase();
+        // إظهار أو إخفاء الكروت بناءً على كلمة البحث
+        if (cardText.includes(term)) {
+          link.style.display = "block";
+        } else {
+          link.style.display = "none";
+        }
+      });
+
+      // إخفاء العناوين الجانبية إذا لم توجد نتائج تحتها (اختياري)
+      document.querySelectorAll(".section-title").forEach(title => {
+        const nextGrid = title.nextElementSibling;
+        if (nextGrid && nextGrid.classList.contains("categories")) {
+          const hasVisibleCards = [...nextGrid.children].some(child => child.style.display !== "none");
+          title.style.display = hasVisibleCards ? "block" : "none";
+        }
+      });
+    });
+  }
+
+  // --- 3. تشغيل القائمة الجانبية (Sidebar) ---
+  // ملاحظة: تحتاج إضافة زر في HTML يحمل id="menuBtn" لتفعيل هذا الجزء
+  const menuBtn = document.getElementById("menuBtn") || document.querySelector(".menu-btn");
+  const sidebar = document.getElementById("sidebar") || document.querySelector(".side-menu");
+
+  if (menuBtn && sidebar) {
+    menuBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      // تغيير موضع القائمة بناءً على اتجاه RTL
+      if (sidebar.classList.contains("active")) {
+        sidebar.style.right = "0";
+      } else {
+        sidebar.style.right = "-260px";
+      }
+    });
+
+    // إغلاق القائمة عند النقر خارجها
+    document.addEventListener("click", (e) => {
+      if (!sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+        sidebar.style.right = "-260px";
+        sidebar.classList.remove("active");
+      }
+    });
+  }
+});
+
+// --- 4. وظيفة إرسال المشكلة (Global Function) ---
+function openForm() {
+  const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform";
+  window.open(formUrl, "_blank");
+}

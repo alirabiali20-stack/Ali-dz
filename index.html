@@ -30,9 +30,12 @@
             <a href="casier.html" class="card-link"><div class="card">وزارة العدل ⚖️</div></a>
             <a href="housing.html" class="card-link"><div class="card">🏘️السكن والعمران</div></a>
             <a href="education.html" class="card-link"><div class="card">التربية 👨‍🏫 والتعليم</div></a>
-            <!-- إضافة فضاء الأستاذ داخل التربية والتعليم -->
+            <!-- فضاءات إضافية داخل التربية والتعليم -->
             <a href="https://ostad.education.dz/auth" target="_blank" class="card-link">
                 <div class="card">👨‍🏫 فضاء الأستاذ</div>
+            </a>
+            <a href="https://retraite.cnr.dz/#/" target="_blank" class="card-link">
+                <div class="card">🧓 فضاء التقاعد</div>
             </a>
             <a href="training.htm" class="card-link"><div class="card">التكوين المهني 📟</div></a>
             <a href="payment.html" class="card-link"><div class="card">💳الدفع الإلكتروني</div></a>
@@ -118,15 +121,9 @@
         <div class="contact">
             <h2 class="section-title">📞 اتصل بنا</h2>
             <div class="contact-icons">
-                <a href="https://wa.me/213671720653" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="55">
-                </a>
-                <a href="https://t.me/RabiaAameur" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="55">
-                </a>
-                <a href="https://www.facebook.com/share/1B6d3A3TdS/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="55">
-                </a>
+                <a href="https://wa.me/213671720653" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="55"></a>
+                <a href="https://t.me/RabiaAameur" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="55"></a>
+                <a href="https://www.facebook.com/share/1B6d3A3TdS/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="55"></a>
             </div>
         </div>
     </div>
@@ -150,11 +147,7 @@
 
         function toggleAnem() {
             const sub = document.getElementById("anemSub");
-            if (sub.style.display === "none") {
-                sub.style.display = "block";
-            } else {
-                sub.style.display = "none";
-            }
+            sub.style.display = sub.style.display === "none" ? "block" : "none";
         }
     </script>
 </body>

@@ -1,157 +1,164 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>Ali.dz</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Ali.dz</title>
+  <meta name="google-site-verification" content="rW3ZT-2v_8kI34rFDRMJ5xuTZiG2_x8uxDUtUbFcaYY" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Splash Screen -->
-    <div id="splash">
-        <h1 class="typing">مرحبا بك في منصة Ali.dz</h1>
-        <button id="enterBtn">دخول</button>
+
+<body>                                            
+  <div id="splash">
+    <h1 class="typing">مرحبا بك في منصة Ali.dz</h1>
+    <button id="enterBtn">دخول</button>
+  </div>
+
+  <div id="mainContent" style="display:none;">                          
+    <h2 class="section-title">
+      <span class="logo-icon">🟢</span>
+      الخدمات المتاحة Syntax.ALI
+    </h2>
+
+    <input type="text" class="search" placeholder="🔍 ابحث داخل المنصة">                            
+    
+    <div class="categories">
+      <a href="admin.html" class="card-link"><div class="card">📖 الخدمات الإدارية</div></a>
+      <a href="civil.html" class="card-link"><div class="card">🧍‍♂️الحالة المدنية</div></a>
+      <a href="social.html" class="card-link"><div class="card">👬الخدمات الاجتماعية</div></a>
+      <a href="casier.html" class="card-link"><div class="card">وزارة العدل ⚖️</div></a>
+      <a href="housing.html" class="card-link"><div class="card"> 🏘️السكن والعمران</div></a>
+      <a href="education.html" class="card-link"><div class="card">التربية 👨‍🏫 والتعليم</div></a>
+      
+      <a href="https://ostad.education.dz/auth" target="_blank" class="card-link">
+          <div class="card">👨‍🏫 فضاء الأستاذ</div>
+      </a>
+      <a href="https://retraite.cnr.dz/#/" target="_blank" class="card-link">
+          <div class="card">🧓 فضاء التقاعد</div>
+      </a>
+      <a href="https://tabioucom.mf.gov.dz/acheter" target="_blank" class="card-link">
+          <div class="card">💵 شراء طابع إلكتروني</div>
+      </a>
+      
+      <a href="training.html" class="card-link"><div class="card">التكوين المهني 📟</div></a>
+      <a href="payment.html" class="card-link"><div class="card"> 💳الدفع الإلكتروني</div></a>
+    </div>           
+
+    <h2 class="section-title">🏢 وكالة التشغيل ANEM</h2>
+    <div class="categories">
+      <div class="card anem-card" style="cursor:pointer;" onclick="toggleAnem()">
+        🏢 وكالة التشغيل (ANEM)
+      </div>
     </div>
 
-    <!-- Main Content -->
-    <div id="mainContent" style="display:none;">
-        <h2 class="section-title">
-            <span class="logo-icon">🟢</span>
-            الخدمات المتاحة SYNTAX.ALI
-        </h2>
-
-        <input type="text" class="search" placeholder="🔍 ابحث داخل المنصة">
-
-        <div class="categories">
-            <a href="admin.html" class="card-link"><div class="card">📚الخدمات الإدارية</div></a>
-            <a href="civil.html" class="card-link"><div class="card">🧍‍♂️الحالة المدنية</div></a>
-            <a href="social.html" class="card-link"><div class="card">👬الخدمات الاجتماعية</div></a>
-            <a href="casier.html" class="card-link"><div class="card">وزارة العدل ⚖️</div></a>
-            <a href="housing.html" class="card-link"><div class="card">🏘️السكن والعمران</div></a>
-            <a href="education.html" class="card-link"><div class="card">التربية 👨‍🏫 والتعليم</div></a>
-            <!-- فضاءات إضافية داخل التربية والتعليم -->
-            <a href="https://ostad.education.dz/auth" target="_blank" class="card-link">
-                <div class="card">👨‍🏫 فضاء الأستاذ</div>
-            </a>
-            <a href="https://retraite.cnr.dz/#/" target="_blank" class="card-link">
-                <div class="card">🧓 فضاء التقاعد</div>
-            </a>
-            <a href="https://tabioucom.mf.gov.dz/acheter" target="_blank" class="card-link">
-                <div class="card">💵 شراء طابع إلكتروني</div>
-            </a>
-            <a href="training.htm" class="card-link"><div class="card">التكوين المهني 📟</div></a>
-            <a href="payment.html" class="card-link"><div class="card">💳الدفع الإلكتروني</div></a>
-        </div>
-
-        <h2 class="section-title">💼 فرص العمل</h2>
-        <div class="categories">
-            <a href="https://khadamati.mtess.gov.dz/" target="_blank" class="card-link">
-                <div class="card">💼 عروض العمل</div>
-            </a>
-        </div>
-
-        <h2 class="section-title">🏢 وكالة التشغيل ANEM</h2>
-        <div class="categories">
-            <div class="card anem-card" onclick="toggleAnem()">🏢 وكالة التشغيل (ANEM)</div>
-        </div>
-
-        <!-- القائمة الفرعية -->
-        <div id="anemSub" class="sub-categories" style="display:none">
-            <a href="https://wassitonline.anem.dz/postulation/prolongationDemande" target="_blank" class="card-link">
-                <div class="card">📄 تمديد وثيقة الطلب</div>
-            </a>
-            <a href="https://minha.anem.dz/" target="_blank" class="card-link">
-                <div class="card">📝 التسجيل في الوكالة</div>
-            </a>
-            <a href="https://minha.anem.dz/" target="_blank" class="card-link">
-                <div class="card">💰 منحة البطالة + حجز الموعد</div>
-            </a>
-        </div>
-
-        <h2 class="section-title">✈️ قسم التأشيرات (روابط رسمية)</h2>
-        <div class="categories">
-            <!-- أوروبا -->
-            <a href="https://algier.diplo.de/dz-ar" target="_blank" class="card-link"><div class="card">🇩🇪 ألمانيا</div></a>
-            <a href="https://www.exteriores.gob.es/Embajadas/argel/ar/Paginas/index.aspx" target="_blank" class="card-link"><div class="card">🇪🇸 إسبانيا</div></a>
-            <a href="https://ambalgeri.esteri.it/ambasciata_algeri/ar/" target="_blank" class="card-link"><div class="card">🇮🇹 إيطاليا</div></a>
-            <a href="https://www.eda.admin.ch/algiers" target="_blank" class="card-link"><div class="card">🇨🇭 سويسرا</div></a>
-            <a href="https://algier.diplomatie.belgium.be/ar" target="_blank" class="card-link"><div class="card">🇧🇪 بلجيكا</div></a>
-            <a href="https://dz.ambafrance.org/" target="_blank" class="card-link"><div class="card">🇫🇷 فرنسا</div></a>
-            <a href="https://www.gov.uk/world/algeria" target="_blank" class="card-link"><div class="card">🇬🇧 بريطانيا</div></a>
-            <a href="https://www.netherlandsandyou.nl/your-country-and-the-netherlands/algeria" target="_blank" class="card-link"><div class="card">🇳🇱 هولندا</div></a>
-            <!-- أمريكا -->
-            <a href="https://dz.usembassy.gov/visas/" target="_blank" class="card-link"><div class="card">🇺🇸 أمريكا</div></a>
-            <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html" target="_blank" class="card-link"><div class="card">🇨🇦 كندا</div></a>
-            <!-- آسيا -->
-            <a href="https://www.mfa.gov.tr/algiers-embassy.en.mfa" target="_blank" class="card-link"><div class="card">🇹🇷 تركيا</div></a>
-        </div>
-
-        <h2 class="section-title">📝 الاستمارات</h2>
-        <div class="categories">
-            <a href="forms.html" class="card-link"><div class="card">🖨️استمارات قابلة للطباعة</div></a>
-        </div>
-
-        <h2 class="section-title">📚 الفروض والاختبارات</h2>
-        <div class="categories">
-            <a href="https://www.dzexams.com/ar/bep" target="_blank" class="card-link"><div class="card">😃 الطور الابتدائي</div></a>
-            <a href="https://www.dzexams.com/ar/bem" target="_blank" class="card-link"><div class="card">👨‍🎓 الطور المتوسط</div></a>
-            <a href="https://www.dzexams.com/ar/bac" target="_blank" class="card-link"><div class="card">🎓 الطور الثانوي</div></a>
-            <!-- إدراج ملاحظات تلقائي -->
-            <a href="https://www.dzexams.pro/ar/amatti.php" target="_blank" class="card-link"><div class="card">📝 إدراج ملاحظات تلقائيا</div></a>
-        </div>
-
-        <h2 class="section-title">📚 ثقافة عامة</h2>
-        <div class="categories">
-            <a href="culture.html" class="card-link"><div class="card">رياضيات</div></a>
-            <a href="culture.html" class="card-link"><div class="card">علوم</div></a>
-            <a href="culture.html" class="card-link"><div class="card">فيزياء</div></a>
-            <a href="culture.html" class="card-link"><div class="card">عربية</div></a>
-            <a href="culture.html" class="card-link"><div class="card">فرنسية</div></a>
-            <a href="culture.html" class="card-link"><div class="card">إنجليزية</div></a>
-            <a href="culture.html" class="card-link"><div class="card">علوم إسلامية</div></a>
-            <a href="culture.html" class="card-link"><div class="card">علم النفس</div></a>
-            <a href="culture.html" class="card-link"><div class="card">علم الاجتماع</div></a>
-            <a href="culture.html" class="card-link"><div class="card">⚽علوم الرياضة</div></a>
-        </div>
-
-        <!-- Ask Problem -->
-        <h2 class="ask-title">❓ اطرح مشكلتك</h2>
-        <p style="margin-bottom:10px;color:#555">سيتم توجيهك إلى نموذج آمن لإرسال مشكلتك</p>
-        <button class="send" onclick="openForm()">إرسال المشكلة</button>
-
-        <!-- Contact -->
-        <div class="contact">
-            <h2 class="section-title">📞 اتصل بنا</h2>
-            <div class="contact-icons">
-                <a href="https://wa.me/213671720653" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="55"></a>
-                <a href="https://t.me/RabiaAameur" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="55"></a>
-                <a href="https://www.facebook.com/share/1B6d3A3TdS/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="55"></a>
-            </div>
-        </div>
+    <div id="anemSub" class="sub-categories" style="display:none; background: #f4f4f4; padding: 10px; border-radius: 8px; margin-bottom: 20px;">
+      <a href="https://wassitonline.anem.dz/postulation/prolongationDemande" target="_blank" class="card-link">
+        <div class="card">📄 تمديد وثيقة الطلب</div>
+      </a>
+      <a href="https://minha.anem.dz/" target="_blank" class="card-link">
+        <div class="card">📝 التسجيل في الوكالة</div>
+      </a>
+      <a href="https://minha.anem.dz/" target="_blank" class="card-link">
+        <div class="card">💰 منحة البطالة + حجز الموعد</div>
+      </a>
     </div>
 
-    <script>
-        const enterBtn = document.getElementById("enterBtn");
-        const splash = document.getElementById("splash");
-        const main = document.getElementById("mainContent");
+    <h2 class="section-title">💼 فرص العمل</h2>
+    <div class="categories">
+      <a href="https://khadamati.mtess.gov.dz/" target="_blank" class="card-link">
+        <div class="card">💼 عروض العمل</div>
+      </a>
+    </div>
 
-        enterBtn.onclick = () => {
-            splash.style.display = "none";
-            main.style.display = "block";
-        };
+    <h2 class="section-title">✈️ قسم التأشيرات (روابط رسمية)</h2>
+    <div class="categories">
+      <a href="https://algier.diplo.de/dz-ar" target="_blank" class="card-link"><div class="card">🇩🇪 ألمانيا</div></a>
+      <a href="https://www.exteriores.gob.es/Embajadas/argel/ar/Paginas/index.aspx" target="_blank" class="card-link"><div class="card">🇪🇸 إسبانيا</div></a>
+      <a href="https://ambalgeri.esteri.it/ambasciata_algeri/ar/" target="_blank" class="card-link"><div class="card">🇮🇹 إيطاليا</div></a>
+      <a href="https://www.eda.admin.ch/algiers" target="_blank" class="card-link"><div class="card">🇨🇭 سويسرا</div></a>
+      <a href="https://algier.diplomatie.belgium.be/ar" target="_blank" class="card-link"><div class="card">🇧🇪 بلجيكا</div></a>
+      <a href="https://dz.ambafrance.org/" target="_blank" class="card-link"><div class="card">🇫🇷 فرنسا</div></a>
+      <a href="https://www.gov.uk/world/algeria" target="_blank" class="card-link"><div class="card">🇬🇧 بريطانيا</div></a>
+      <a href="https://www.netherlandsandyou.nl/your-country-and-the-netherlands/algeria" target="_blank" class="card-link"><div class="card">🇳🇱 هولندا</div></a>
+      <a href="https://dz.usembassy.gov/visas/" target="_blank" class="card-link"><div class="card">🇺🇸 أمريكا</div></a>
+      <a href="https://www.canada.ca/en/immigration-refugees-citizenship/services/application.html" target="_blank" class="card-link"><div class="card">🇨🇦 كندا</div></a>
+      <a href="https://www.mfa.gov.tr/algiers-embassy.en.mfa" target="_blank" class="card-link"><div class="card">🇹🇷 تركيا</div></a>
+    </div>
 
-        function openForm() {
-            window.open(
-                "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform",
-                "_blank"
-            );
-        }
+    <h2 class="section-title">📝 الاستمارات</h2>
+    <div class="categories">
+      <a href="forms.html" class="card-link"><div class="card"> 🖨️استمارات قابلة للطباعة</div></a>
+    </div>                                            
 
-        function toggleAnem() {
-            const sub = document.getElementById("anemSub");
-            sub.style.display = sub.style.display === "none" ? "block" : "none";
-        }
-    </script>
+    <h2 class="section-title">📚 الفروض والاختبارات</h2>
+    <div class="categories">
+      <a href="https://www.dzexams.com/ar/bep" target="_blank" class="card-link"><div class="card"> 😃 الطور الابتدائي</div></a>
+      <a href="https://www.dzexams.com/ar/bem" target="_blank" class="card-link"><div class="card"> 👨‍🎓 الطور المتوسط</div></a>
+      <a href="https://www.dzexams.com/ar/bac" target="_blank" class="card-link"><div class="card"> 🎓 الطور الثانوي</div></a>
+      <a href="https://www.dzexams.pro/ar/amatti.php" target="_blank" class="card-link"><div class="card">📝 إدراج ملاحظات تلقائياً</div></a>
+    </div>
+
+    <h2 class="section-title">📚 ثقافة عامة</h2>
+    <div class="categories">
+      <a href="culture.html" class="card-link"><div class="card">رياضيات</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علوم</div></a>
+      <a href="culture.html" class="card-link"><div class="card">فيزياء</div></a>
+      <a href="culture.html" class="card-link"><div class="card">عربية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">فرنسية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">إنجليزية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علوم إسلامية</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علم النفس</div></a>
+      <a href="culture.html" class="card-link"><div class="card">علم الاجتماع</div></a>
+      <a href="culture.html" class="card-link"><div class="card"> ⚽علوم الرياضة</div></a>
+    </div>
+
+    <h2 class="ask-title">❓ اطرح مشكلتك</h2>     
+    <p style="margin-bottom:10px;color:#555">سيتم توجيهك إلى نموذج آمن لإرسال مشكلتك</p>
+    <button class="send" onclick="openForm()">إرسال المشكلة</button>
+
+    <div class="contact">
+      <h2 class="section-title">📞 اتصل بنا</h2>
+      <div class="contact-icons">
+        <a href="https://wa.me/213671720653" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="55"></a>
+        <a href="https://t.me/RabiaAameur" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="55"></a>
+        <a href="https://www.facebook.com/share/1B6d3A3TdS/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="55"></a>
+      </div>                                          
+    </div>
+
+    <footer style="margin-top: 50px; padding: 20px; background-color: #f9f9f9; text-align: center; border-top: 1px solid #ddd; font-size: 14px; color: #666;">
+        <p><strong>إخلاء مسؤولية:</strong> منصة Ali.dz هي دليل روابط مستقل لتسهيل الوصول للخدمات الرقمية الرسمية. نحن لا نتبع لأي جهة حكومية، لا نجمع بيانات، ولا نطلب معلومات سرية.</p>
+        <p dir="ltr">© 2026 Ali.dz - Educational & Service Directory</p>
+    </footer>
+
+  </div>
+
+  <script>
+    const enterBtn = document.getElementById("enterBtn");
+    const splash = document.getElementById("splash");
+    const main = document.getElementById("mainContent");
+
+    // وظيفة الدخول من الشاشة الافتتاحية
+    enterBtn.onclick = () => {
+      splash.style.display = "none";
+      main.style.display = "block";
+    };
+
+    // وظيفة فتح نموذج جوجل
+    function openForm() {
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform", "_blank");
+    }
+
+    // وظيفة إظهار/إخفاء قائمة ANEM المنسدلة
+    function toggleAnem() {
+      const sub = document.getElementById("anemSub");
+      if (sub.style.display === "none" || sub.style.display === "") {
+          sub.style.display = "block";
+      } else {
+          sub.style.display = "none";
+      }
+    }
+  </script>                                       
 </body>
 </html>

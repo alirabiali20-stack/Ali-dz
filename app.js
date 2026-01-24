@@ -104,4 +104,7 @@ function openForm() {
   const formUrl =
     "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform";
   window.open(formUrl, "_blank");
+}function toggleAnem() {
+  const sub = document.getElementById("anemSub");
+  sub.style.display = sub.style.display === "none" ? "grid" : "none";
 }

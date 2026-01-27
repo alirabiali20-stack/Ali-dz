@@ -77,3 +77,13 @@ function toggleAnem() {
   // استخدام flex أو block لضمان الظهور الصحيح
   sub.style.display = (sub.style.display === "none" || sub.style.display === "") ? "block" : "none";
 }
+function toggleCamScanner() {
+  const camSub = document.getElementById("camSub");
+  if (!camSub) return;
+  // التبديل بين الظهور والإخفاء
+  if (camSub.style.display === "none" || camSub.style.display === "") {
+      camSub.style.display = "grid"; // نستخدم grid ليناسب تصميم الكروت
+  } else {
+      camSub.style.display = "none";
+  }
+}

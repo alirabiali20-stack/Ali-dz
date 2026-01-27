@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النماذج والاستمارات</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #f4f7f6; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        
+        /* شريط علوي مع زر عودة */
+        .top-bar { background: #27ae60; color: white; padding: 15px 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .back-link { color: white; text-decoration: none; font-size: 20px; margin-left: 15px; display: flex; align-items: center; }
+        .top-bar h2 { margin: 0; font-size: 18px; flex-grow: 1; }
+
+        .forms-wrapper { max-width: 650px; margin: 0 auto; background: #ffffff; min-height: 100vh; }
+        .search-container { padding: 15px; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 55px; z-index: 5; }
+        .search-box { width: 100%; padding: 12px 15px; border: 2px solid #f0f0f0; border-radius: 25px; outline: none; transition: 0.3s; box-sizing: border-box; text-align: right; font-size: 15px; }
+        .search-box:focus { border-color: #27ae60; background: #fff; }
+        
+        .forms-list { padding: 10px; }
+        .form-card { display: flex; align-items: center; padding: 15px 20px; border-bottom: 1px solid #f9f9f9; text-decoration: none; color: #333; transition: 0.2s; }
+        .form-card:hover { background: #f0fdf4; }
+        .form-icon { width: 40px; height: 40px; background: #eafaf1; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-left: 15px; color: #27ae60; flex-shrink: 0; }
+        .form-details { flex-grow: 1; text-align: right; }
+        .form-details strong { display: block; font-size: 14px; margin-bottom: 3px; }
+        .form-details span { font-size: 12px; color: #888; }
+        .arrow-left { color: #ddd; font-size: 12px; }
+        #noResultsMsg { padding: 50px 20px; text-align: center; color: #999; display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="forms-wrapper">
+        <div class="top-bar">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-right"></i></a>
+            <h2>قائمة الاستمارات</h2>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="formSearchInput" class="search-box" onkeyup="filterForms()" placeholder="بحث عن اسم الاستمارة (مثلاً: سلفة، منحة)...">
+        </div>
+
+        <div class="forms-list" id="formsList">
+            <a href="https://drive.google.com/file/d/1ToL3P_PNs8hm93su6OFYcudBINWnMxaa/view?usp=drivesdk" class="form-card" data-title="طلب خطي">
+                <div class="form-icon"><i class="fas fa-pen-nib"></i></div>
+                <div class="form-details"><strong>طلب خطي</strong><span>نموذج عام</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1tS1v1XtX7Tl0p5SRK__vTeGr9aYq2wIS/view?usp=drivesdk" class="form-card" data-title="شهادة طبية صدرية وعامة">
+                <div class="form-icon"><i class="fas fa-stethoscope"></i></div>
+                <div class="form-details"><strong>شهادة طبية صدرية وعامة</strong><span>ملف طبي</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+            
+            <a href="https://drive.google.com/file/d/1J7OY9qvyDqhK-BaE0XXRnL5syjLPgUgq/view?usp=drivesdk" class="form-card" data-title="شهادة طبية">
+                <div class="form-icon"><i class="fas fa-notes-medical"></i></div>
+                <div class="form-details"><strong>شهادة طبية</strong><span>نموذج طبي</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1uKbQPkD7M0JcrzVMLUe4J89IiWRpDuOe/view?usp=drivesdk" class="form-card" data-title="إعادة إرسال البطاقة الذهبية">
+                <div class="form-icon"><i class="fas fa-credit-card"></i></div>
+                <div class="form-details"><strong>إعادة إرسال البطاقة الذهبية</strong><span>بريد الجزائر</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1rVZNzsJrRPI7OZDvJ0es0PLtejE7i6u9/view?usp=drivesdk" class="form-card" data-title="نموذج منح السكن الترقوي العمومي">
+                <div class="form-icon"><i class="fas fa-home"></i></div>
+                <div class="form-details"><strong>نموذج منح السكن الترقوي العمومي</strong><span>سكن LPP</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1ResEchcNhxfiyW_bU6VbNxU_ckm2Gm-6/view?usp=drivesdk" class="form-card" data-title="ورقة العلاج الطبي">
+                <div class="form-icon"><i class="fas fa-file-medical"></i></div>
+                <div class="form-details"><strong>ورقة العلاج الطبي</strong><span>تأمين</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1a66n7ffX7OjM9o6HGTD7et0xUpnpiOyb/view?usp=drivesdk" class="form-card" data-title="قائمة التعويض">
+                <div class="form-icon"><i class="fas fa-list-ol"></i></div>
+                <div class="form-details"><strong>قائمة التعويض</strong><span>ملف إداري</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1dslaYE5xF6zN1zl_hDvHLZITQUPjo24U/view?usp=drivesdk" class="form-card" data-title="عدم الزواج">
+                <div class="form-icon"><i class="fas fa-user-friends"></i></div>
+                <div class="form-details"><strong>عدم الزواج</strong><span>حالة مدنية</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1dslaYE5xF6zN1zl_hDvHLZITQUPjo24U/view?usp=drivesdk" class="form-card" data-title="طلب منحة الوفاة">
+                <div class="form-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <div class="form-details"><strong>طلب منحة الوفاة</strong><span>منح</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1ezS6djOmLtmfoqAM0EMzDIMR3ZLGPJny/view?usp=drivesdk" class="form-card" data-title="طلب منحة الأرملة الغير العاملة">
+                <div class="form-icon"><i class="fas fa-female"></i></div>
+                <div class="form-details"><strong>منحة الأرملة الغير العاملة</strong><span>منح اجتماعية</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1hQc9EISZ2kymG2-UiA-xkuU8lpUGSKBo/view?usp=drivesdk" class="form-card" data-title="طلب منحة المساعدة LPA">
+                <div class="form-icon"><i class="fas fa-house-user"></i></div>
+                <div class="form-details"><strong>طلب منحة المساعدة LPA</strong><span>دعم السكن</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1TO23pws-dV5uDFY71jUn4ATbbgNs6sDi/view?usp=drivesdk" class="form-card" data-title="طلب رخصة لزواج المختلط ( أجنبي)">
+                <div class="form-icon"><i class="fas fa-passport"></i></div>
+                <div class="form-details"><strong>رخصة لزواج مختلط (أجنبي)</strong><span>رخص</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1wDehiBQvKLkICobR7fqHJKLrTkOApQ9k/view?usp=drivesdk" class="form-card" data-title="طلب الإستفادة من منحة وفاة الزوج">
+                <div class="form-icon"><i class="fas fa-heart-broken"></i></div>
+                <div class="form-details"><strong>منحة وفاة الزوج (ة)</strong><span>منح</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1OU0hvhx0XQjvgSdUmduAAHoaw6DTwGlv/view?usp=drivesdk" class="form-card" data-title="طلب سلفة شراء سكن">
+                <div class="form-icon"><i class="fas fa-coins"></i></div>
+                <div class="form-details"><strong>طلب سلفة شراء سكن</strong><span>سلفيات</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1Cplk2thGk_3L2JdPuaO1VsQ_8NnU3JDR/class="form-card" data-title="طلب سلفة الزواج">
+                <div class="form-icon"><i class="fas fa-ring"></i></div>
+                <div class="form-details"><strong>طلب سلفة الزواج</strong><span>سلفيات</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1ittCUsLCX8tXQ0AbIVzg0_n33OT2WVV5/view?usp=drivesdk" class="form-card" data-title="طلب الإستفادة اللجنة من المخيمات الصيفية">
+                <div class="form-icon"><i class="fas fa-sun"></i></div>
+                <div class="form-details"><strong>المخيمات الصيفية</strong><span>لجنة الخدمات</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1pRxfrQrRiEbmvsEH5B8mbwWxfV2AmXUe/view?usp=drivesdk" class="form-card" data-title="طلب سلفة إستثنائية">
+                <div class="form-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                <div class="form-details"><strong>طلب سلفة إستثنائية</strong><span>سلفيات</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1HJiBbDydwu8GEJGh9NUH6sYSWMf9tR61/view?usp=drivesdk" class="form-card" data-title="طلب الإستفادة من رحلة الى خارج الوطن">
+                <div class="form-icon"><i class="fas fa-plane"></i></div>
+                <div class="form-details"><strong>رحلة إلى خارج الوطن</strong><span>رحلات</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1uTBsW_EKi6Qi5RJbUkg9UP3q9E_ENzRs/view?usp=drivesdk" class="form-card" data-title="التوكيل الإستثنائي">
+                <div class="form-icon"><i class="fas fa-user-shield"></i></div>
+                <div class="form-details"><strong>التوكيل الإستثنائي</strong><span>قانوني</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1PxQLHwu5IIChCyzbLk5t_23y1lIMmzgr/view?usp=drivesdk" class="form-card" data-title="تصريح بإستئناف العمل او عدم الإستئناف">
+                <div class="form-icon"><i class="fas fa-check-double"></i></div>
+                <div class="form-details"><strong>تصريح باستئناف العمل</strong><span>عمل</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1DrEdtZ1T3ktRKt2LQcxMJ7sdMOo83eG2/view?usp=drivesdk" class="form-card" data-title="نموذج بطاقة المعلومات">
+                <div class="form-icon"><i class="fas fa-id-card-alt"></i></div>
+                <div class="form-details"><strong>نموذج بطاقة المعلومات</strong><span>بيانات</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1S05n1RApl2iLNUqCQFKfR-JsNG9I_cSX/view?usp=drivesdk" class="form-card" data-title="تصريح بحادث عمل">
+                <div class="form-icon"><i class="fas fa-ambulance"></i></div>
+                <div class="form-details"><strong>تصريح بحادث عمل</strong><span>ضمان اجتماعي</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1QOMlQmO-x-ypckVLb1bSlMmMP3un6gaH/view?usp=drivesdk" class="form-card" data-title="استمارة المشاركة في المسابقة على اساس الشهادة">
+                <div class="form-icon"><i class="fas fa-file-contract"></i></div>
+                <div class="form-details"><strong>استمارة مسابقة (شهادة)</strong><span>توظيف</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1JDzdkEEZDZuDjD03jOskC_QTLrDR2eG9/view?usp=drivesdk" class="form-card" data-title="طلب الإذن بالتصوير">
+                <div class="form-icon"><i class="fas fa-camera"></i></div>
+                <div class="form-details"><strong>طلب الإذن بالتصوير</strong><span>رخص</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1qb4EL73zd_pKa1dhd3_Eqm1kGtMzlLFS/view?usp=drivesdk" class="form-card" data-title="طلب الحصول على رخصة السياقة">
+                <div class="form-icon"><i class="fas fa-car-side"></i></div>
+                <div class="form-details"><strong>طلب رخصة السياقة</strong><span>البلدية</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/16K1ql0-3p2BfglEq0oaTv_kWMFahaksP/view?usp=drivesdk" class="form-card" data-title="استمارة طلب الشطب سجل تجاري شخص معنوي">
+                <div class="form-icon"><i class="fas fa-ban"></i></div>
+                <div class="form-details"><strong>شطب سجل تجاري</strong><span>CNRC</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1BB0-PUoKB9c5tV4wwMfJAgyDKEt_DQ3N/view?usp=drivesdk" class="form-card" data-title="عمليات نقدية بريدية">
+                <div class="form-icon"><i class="fas fa-money-bill"></i></div>
+                <div class="form-details"><strong>عمليات نقدية بريدية</strong><span>بريد الجزائر</span></div>
+                <i class="fas fa-chevron-left arrow-left"></i>
+            </a>
+        </div>
+
+        <div id="noResultsMsg">عذراً، لا يوجد نموذج بهذا الاسم.</div>
+        
+        <div style="text-align: center; padding: 25px; border-top: 1px solid #eee; background: #fff;">
+            <a href="#" style="color:#27ae60; text-decoration:none; font-size:14px; font-weight: bold;">🌹 لا تنسونا من صالح دعائكم</a>
+        </div>
+    </div>
+
+    <script>
+        function filterForms() {
+            let input = document.getElementById('formSearchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('form-card');
+            let found = false;
+
+            for (let i = 0; i < cards.length; i++) {
+                let title = cards[i].getAttribute('data-title').toLowerCase();
+                if (title.includes(input)) {
+                    cards[i].style.display = "flex";
+                    found = true;
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+            document.getElementById('noResultsMsg').style.display = found ? "none" : "block";
+        }
+    </script>
+</body>
+</html>

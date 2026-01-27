@@ -108,26 +108,32 @@ function openForm() {
   const sub = document.getElementById("anemSub");
   sub.style.display = sub.style.display === "none" ? "grid" : "none";
 }
-// ===== بحث ذكي داخل الأقسام (إضافة فقط) =====
-document.querySelector(".search").addEventListener("input", function () {
-  const keyword = this.value.toLowerCase().trim();
+// ===== إضافة بحث داخل الأقسام =====
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.querySelector(".search");
 
-  document.querySelectorAll(".section-title").forEach(title => {
-    const section = title.nextElementSibling;
-    let hasMatch = false;
+  if (!searchInput) return;
 
-    if (section && section.classList.contains("categories")) {
-      section.querySelectorAll(".card").forEach(card => {
-        const text = card.textContent.toLowerCase();
-        const match = text.includes(keyword);
+  searchInput.addEventListener("input", function () {
+    const term = this.value.toLowerCase().trim();
 
-        card.parentElement.style.display = match || keyword === "" ? "block" : "none";
-        if (match) hasMatch = true;
-      });
+    document.querySelectorAll(".section-title").forEach(title => {
+      const section = title.nextElementSibling;
+      let foundInSection = false;
 
-      // إظهار / إخفاء القسم كامل
-      title.style.display = hasMatch || keyword === "" ? "block" : "none";
-      section.style.display = hasMatch || keyword === "" ? "grid" : "none";
-    }
+      if (section && section.classList.contains("categories")) {
+        section.querySelectorAll(".card-link").forEach(link => {
+          const cardText = link.textContent.toLowerCase();
+          const match = cardText.includes(term);
+
+          link.style.display = match || term === "" ? "block" : "none";
+          if (match) foundInSection = true;
+        });
+
+        // إظهار أو إخفاء القسم بالكامل
+        title.style.display = foundInSection || term === "" ? "block" : "none";
+        section.style.display = foundInSection || term === "" ? "grid" : "none";
+      }
+    });
   });
 });

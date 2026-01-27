@@ -5,9 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const splash = document.getElementById("splash");
   const main = document.getElementById("mainContent");
   const searchInput = document.querySelector(".search");
-  const cards = document.querySelectorAll(".categories .card");
 
-  // --- 1. التحكم في شاشة الترحيب ---
+  // --- 1. شاشة الترحيب ---
   if (enterBtn && splash && main) {
     enterBtn.addEventListener("click", () => {
       splash.style.transition = "opacity 0.5s ease";
@@ -21,24 +20,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- 2. نظام البحث ---
-  if (searchInput && cards.length > 0) {
+  // --- 2. البحث داخل الأقسام فقط ---
+  if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       const term = e.target.value.toLowerCase().trim();
 
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(term) ? "block" : "none";
-      });
-
-      // إخفاء العناوين إذا لم توجد نتائج
       document.querySelectorAll(".section-title").forEach(title => {
-        const nextGrid = title.nextElementSibling;
-        if (nextGrid && nextGrid.classList.contains("categories")) {
-          const hasVisible = [...nextGrid.children].some(
-            el => el.style.display !== "none"
-          );
-          title.style.display = hasVisible ? "block" : "none";
+        const section = title.nextElementSibling;
+        let foundInSection = false;
+
+        if (section && section.classList.contains("categories")) {
+          section.querySelectorAll(".card-link").forEach(link => {
+            const text = link.textContent.toLowerCase();
+            const match = text.includes(term);
+
+            link.style.display = match || term === "" ? "block" : "none";
+            if (match) foundInSection = true;
+          });
+
+          // إظهار أو إخفاء القسم كامل
+          title.style.display =
+            foundInSection || term === "" ? "block" : "none";
+          section.style.display =
+            foundInSection || term === "" ? "grid" : "none";
         }
       });
     });
@@ -48,92 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // --- 3. فتح نموذج Google Form ---
 function openForm() {
-  const formUrl =
-    "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform";
-  window.open(formUrl, "_blank");
-}document.addEventListener("DOMContentLoaded", () => {
-  
-  // --- العناصر الأساسية ---
-  const enterBtn = document.getElementById("enterBtn");
-  const splash = document.getElementById("splash");
-  const main = document.getElementById("mainContent");
-  const searchInput = document.querySelector(".search");
-  const cards = document.querySelectorAll(".categories .card");
-  
-  // --- 1. التحكم في شاشة الترحيب ---
-  if (enterBtn && splash && main) {
-    enterBtn.addEventListener("click", () => {
-      splash.style.transition = "opacity 0.5s ease";
-      splash.style.opacity = "0";
-      
-      setTimeout(() => {
-        splash.style.display = "none";
-        main.style.display = "block";
-        window.scrollTo(0, 0);
-      }, 500);
-    });
-  }
-  
-  // --- 2. نظام البحث ---
-  if (searchInput && cards.length > 0) {
-    searchInput.addEventListener("input", (e) => {
-      const term = e.target.value.toLowerCase().trim();
-      
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(term) ? "block" : "none";
-      });
-      
-      // إخفاء العناوين إذا لم توجد نتائج
-      document.querySelectorAll(".section-title").forEach(title => {
-        const nextGrid = title.nextElementSibling;
-        if (nextGrid && nextGrid.classList.contains("categories")) {
-          const hasVisible = [...nextGrid.children].some(
-            el => el.style.display !== "none"
-          );
-          title.style.display = hasVisible ? "block" : "none";
-        }
-      });
-    });
-  }
-  
-});
-
-// --- 3. فتح نموذج Google Form ---
-function openForm() {
-  const formUrl =
-    "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform";
-  window.open(formUrl, "_blank");
-}function toggleAnem() {
-  const sub = document.getElementById("anemSub");
-  sub.style.display = sub.style.display === "none" ? "grid" : "none";
+  window.open(
+    "https://docs.google.com/forms/d/e/1FAIpQLSeSw9YfPx2v7AsvP80IPg5wWf_O3wJCcSo9BJChNzrntnXwSA/viewform",
+    "_blank"
+  );
 }
-// ===== إضافة بحث داخل الأقسام =====
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.querySelector(".search");
 
-  if (!searchInput) return;
-
-  searchInput.addEventListener("input", function () {
-    const term = this.value.toLowerCase().trim();
-
-    document.querySelectorAll(".section-title").forEach(title => {
-      const section = title.nextElementSibling;
-      let foundInSection = false;
-
-      if (section && section.classList.contains("categories")) {
-        section.querySelectorAll(".card-link").forEach(link => {
-          const cardText = link.textContent.toLowerCase();
-          const match = cardText.includes(term);
-
-          link.style.display = match || term === "" ? "block" : "none";
-          if (match) foundInSection = true;
-        });
-
-        // إظهار أو إخفاء القسم بالكامل
-        title.style.display = foundInSection || term === "" ? "block" : "none";
-        section.style.display = foundInSection || term === "" ? "grid" : "none";
-      }
-    });
-  });
-});
+// --- 4. قائمة ANEM ---
+function toggleAnem() {
+  const sub = document.getElementById("anemSub");
+  if (!sub) return;
+  sub.style.display = sub.style.display === "grid" ? "none" : "grid";
+}

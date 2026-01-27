@@ -32,6 +32,31 @@
       <a href="https://retraite.cnr.dz/#/" target="_blank" class="card-link">
           <div class="card">🧓 فضاء التقاعد</div>
       </a>
+</div>
+<h2 class="section-title">🕌 الشؤون الدينية</h2>
+<div class="categories">
+  <div class="card-link">
+    <div class="card" style="cursor:pointer; background: #eafaf1; border-right: 5px solid #008751;" onclick="toggleImam()">
+      👳‍♂️ فضاء الإمام والخدمات الدينية
+    </div>
+  </div>
+</div>
+
+<div id="imamSub" class="sub-categories" style="display:none; background: #f9f9f9; padding: 10px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #ddd;">
+  
+  <a href="https://marw.gov.dz/%d9%85%d9%82%d8%a7%d9%84%d8%a7%d8%aa-%d9%88%d8%af%d8%b1%d8%a7%d8%b3%d8%a7%d8%aa/%d9%81%d8%b6%d8%a7%d8%a1-%d8%a7%d9%84%d8%a5%d9%85%d8%a7%d9%85" target="_blank" class="card-link">
+    <div class="card">📖 مقالات ودراسات (فضاء الإمام)</div>
+  </a>
+  <a href="https://marw.gov.dz/zakat" target="_blank" class="card-link">
+    <div class="card">💰 صندوق الزكاة الجزائري</div>
+  </a>
+  <a href="https://www.onpo.dz/" target="_blank" class="card-link">
+    <div class="card">🕋 الحج والعمرة</div>
+  </a>
+  <a href="https://marw.gov.dz/%d9%85%d9%88%d8%a7%d9%82%d9%8a%d8%aa-%d8%a7%d9%84%d8%b5%d9%84%d8%a7%d8%a9" target="_blank" class="card-link">
+    <div class="card">🕒 مواقيت الصلاة</div>
+  </a>
+</div>
       <a href="https://tabioucom.mf.gov.dz/acheter" target="_blank" class="card-link">
           <div class="card">💵 شراء طابع إلكتروني</div>
       </a>
@@ -229,19 +254,6 @@
         <div class="card">📱 كتب إلكترونية متنوعة</div>
       </a>
     </div>
-    <h2 class="section-title">📚 ثقافة عامة</h2>
-    <div class="categories">
-      <a href="culture.html" class="card-link"><div class="card">رياضيات</div></a>
-      <a href="culture.html" class="card-link"><div class="card">علوم</div></a>
-      <a href="culture.html" class="card-link"><div class="card">فيزياء</div></a>
-      <a href="culture.html" class="card-link"><div class="card">عربية</div></a>
-      <a href="culture.html" class="card-link"><div class="card">فرنسية</div></a>
-      <a href="culture.html" class="card-link"><div class="card">إنجليزية</div></a>
-      <a href="culture.html" class="card-link"><div class="card">علوم إسلامية</div></a>
-      <a href="culture.html" class="card-link"><div class="card">علم النفس</div></a>
-      <a href="culture.html" class="card-link"><div class="card">علم الاجتماع</div></a>
-      <a href="culture.html" class="card-link"><div class="card"> ⚽علوم الرياضة</div></a>
-    </div>
     <h2 class="ask-title">❓ اطرح مشكلتك</h2>
     <p style="margin-bottom:10px;color:#555">سيتم توجيهك إلى نموذج آمن لإرسال مشكلتك</p>
     <button class="send" onclick="openForm()">إرسال المشكلة</button>
@@ -320,6 +332,14 @@
             sub.style.display = "none";
         }
     }
+    function toggleImam() {
+  const sub = document.getElementById("imamSub");
+  if (sub.style.display === "none" || sub.style.display === "") {
+      sub.style.display = "block";
+  } else {
+      sub.style.display = "none";
+  }
+}
 </script>
 </body>
 </html>

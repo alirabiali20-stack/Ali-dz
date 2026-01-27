@@ -108,3 +108,26 @@ function openForm() {
   const sub = document.getElementById("anemSub");
   sub.style.display = sub.style.display === "none" ? "grid" : "none";
 }
+// ===== بحث ذكي داخل الأقسام (إضافة فقط) =====
+document.querySelector(".search").addEventListener("input", function () {
+  const keyword = this.value.toLowerCase().trim();
+
+  document.querySelectorAll(".section-title").forEach(title => {
+    const section = title.nextElementSibling;
+    let hasMatch = false;
+
+    if (section && section.classList.contains("categories")) {
+      section.querySelectorAll(".card").forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const match = text.includes(keyword);
+
+        card.parentElement.style.display = match || keyword === "" ? "block" : "none";
+        if (match) hasMatch = true;
+      });
+
+      // إظهار / إخفاء القسم كامل
+      title.style.display = hasMatch || keyword === "" ? "block" : "none";
+      section.style.display = hasMatch || keyword === "" ? "grid" : "none";
+    }
+  });
+});

@@ -569,7 +569,34 @@ function toggleSection(id) {
   } else {
     section.style.display = "none";
   }
-}
-</script>
+}     function toggleSection(id) {
+            const element = document.getElementById(id);
+            const isVisible = element.style.display === 'block';
+
+            if (!isVisible) {
+                element.style.display = 'block';
+                // يخبر المتصفح أننا دخلنا "صفحة وهمية" داخل الموقع
+                window.history.pushState({ sectionId: id }, ""); 
+            } else {
+                element.style.display = 'none';
+            }
+        }
+
+        // هذا الكود هو المسؤول عن "الرجوع" عند ضغط زر الهاتف
+        window.onpopstate = function(event) {
+            const subCategories = document.querySelectorAll('.sub-categories');
+            subCategories.forEach(section => {
+                section.style.display = 'none'; // يغلق كل القوائم المفتوحة
+            });
+        };
+
+        // زر الدخول من الشاشة الافتتاحية
+        document.getElementById('enterBtn').addEventListener('click', function() {
+            document.getElementById('splash').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+            // يسجل نقطة بداية حتى لا يخرج المتصفح عند أول ضغطة رجوع
+            window.history.pushState({ main: true }, "");
+        });
+    </script>
 </body>
 </html>

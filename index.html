@@ -166,6 +166,28 @@
     </div>
   </div>
 </div>
+<h2 class="section-title">🏆 المسابقات والتوظيف</h2>
+<div class="categories">
+  <div class="card-link">
+    <div class="card" style="cursor:pointer; background: #ffffff; border-right: 5px solid #f1c40f;" onclick="toggleSection('competitionsSub')">
+      📅 مسابقات التوظيف والامتحانات الرسمية
+    </div>
+  </div>
+</div>
+<div id="competitionsSub" class="sub-categories" style="display:none;">
+  <div class="categories">
+    <div class="card" style="font-size: 1rem; color: #111; border-color: #f1c40f; line-height: 1.6; display: block; padding: 20px; text-align: center;">
+        📢 <strong>لا توجد مسابقات رسمية في الوقت الحالي.</strong><br>
+        <span style="font-weight: normal; font-size: 0.9rem;">يرجى اتباع الأخبار الرسمية؛ وعند فتح أي مسابقة جديدة، ستجدون الرابط المباشر للتسجيل هنا فوراً.</span>
+    </div>
+    <a href="https://concours.onec.dz/" target="_blank" class="card-link">
+        <div class="card">🔍 موقع مسابقات الوظيفة العمومية (للمتابعة)</div>
+    </a>
+    <div class="card" style="font-size: 0.85rem; font-weight: normal; background: #fffdf0; border-color: #f1c40f; display: block; padding: 10px;">
+        💡 <strong>نصيحة:</strong> تابع قسم <b>"مركز الأخبار"</b> في الأعلى لمعرفة مواعيد انطلاق مسابقات الأساتذة، الإدارة، أو الصحة.
+    </div>
+  </div>
+</div>
 <h2 class="section-title">💼 فرص العمل والتوظيف</h2>
 <div class="categories">
   <div class="card-link">
@@ -778,7 +800,6 @@
                 const term = this.value.toLowerCase().trim();
                 const cards = document.querySelectorAll(".card-link, .anem-card");
                 const titles = document.querySelectorAll(".section-title");
-
                 cards.forEach(card => {
                     const text = card.textContent.toLowerCase();
                     if (text.includes(term)) {
@@ -849,7 +870,6 @@ function toggleSection(id) {
 }     function toggleSection(id) {
             const element = document.getElementById(id);
             const isVisible = element.style.display === 'block';
-
             if (!isVisible) {
                 element.style.display = 'block';
                 // يخبر المتصفح أننا دخلنا "صفحة وهمية" داخل الموقع
@@ -858,7 +878,6 @@ function toggleSection(id) {
                 element.style.display = 'none';
             }
         }
-
         // هذا الكود هو المسؤول عن "الرجوع" عند ضغط زر الهاتف
         window.onpopstate = function(event) {
             const subCategories = document.querySelectorAll('.sub-categories');
@@ -866,7 +885,6 @@ function toggleSection(id) {
                 section.style.display = 'none'; // يغلق كل القوائم المفتوحة
             });
         };
-
         // زر الدخول من الشاشة الافتتاحية
         document.getElementById('enterBtn').addEventListener('click', function() {
             document.getElementById('splash').style.display = 'none';

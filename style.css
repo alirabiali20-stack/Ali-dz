@@ -4,7 +4,6 @@
   -webkit-user-select: none;
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
   font-family: 'Cairo', sans-serif;
@@ -12,7 +11,6 @@ body {
   color: #222;
   direction: rtl;
 }
-
 /* --- الشاشة الافتتاحية (Splash) --- */
 #splash {
   position: fixed;
@@ -30,25 +28,21 @@ body {
   animation: gradientMove 6s ease infinite;
   color: white;
 }
-
 .typing {
   font-size: 2.2rem;
   font-weight: bold;
   animation: bounceColor 3s ease-in-out infinite;
   display: inline-block;
 }
-
 @keyframes bounceColor {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-15px); color: #fbbf24; } 
 }
-
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
 #enterBtn {
   padding: 12px 40px;
   font-size: 18px;
@@ -60,19 +54,16 @@ body {
   margin-top: 20px;
   animation: pulse 1.6s infinite;
 }
-
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.6); }
   70% { box-shadow: 0 0 0 15px rgba(255,255,255,0); }
   100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
 }
-
 /* --- المحتوى الرئيسي --- */
 #mainContent {
   display: none;
   padding: 20px;
 }
-
 .section-title {
   margin: 30px 0 15px;
   font-size: 1.4rem;
@@ -80,7 +71,6 @@ body {
   border-right: 4px solid #1abc9c;
   padding-right: 10px;
 }
-
 .search {
   width: 100%;
   padding: 12px;
@@ -89,14 +79,12 @@ body {
   margin-bottom: 20px;
   outline: none;
 }
-
 /* --- المربعات (التي طلبت تلوينها طفيفاً) --- */
 .categories {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 15px;
 }
-
 .card {
   background: #ffffff; /* لون أساسي */
   padding: 20px;
@@ -112,7 +100,6 @@ body {
   font-weight: 600;
   border: 1px solid rgba(15, 157, 88, 0.1); /* إطار خفيف جداً بلون أخضر */
 }
-
 /* إضافة ألوان طفيفة جداً عند المرور (Hover) أو بشكل عشوائي */
 .card:hover {
   transform: translateY(-5px);
@@ -120,7 +107,6 @@ body {
   border-color: #0f9d58;
   box-shadow: 0 6px 15px rgba(15, 157, 88, 0.15);
 }
-
 /* تلوين خلفية الكروت بشكل خفيف وتلقائي لتكسر اللون الأبيض */
 .card-link:nth-child(odd) .card { background: #fafdfb; }
 .card-link:nth-child(even) .card { background: #f7f9fc; }
@@ -134,7 +120,6 @@ body {
   color: white;
   cursor: pointer;
 }
-
 .contact-btn {
   flex: 1;
   padding: 15px;
@@ -144,23 +129,19 @@ body {
   text-decoration: none;
   font-size: 18px;
 }
-
 .whatsapp { background: #25D366; }
 .telegram { background: #0088cc; }
-
 .sub-categories {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
   margin-top: 20px;
 }
-
 .card-link {
   text-decoration: none;
   color: inherit;
   display: block;
 }
-
 /* --- القائمة الجانبية --- */
 #sidebar {
   position: fixed;
@@ -174,18 +155,14 @@ body {
   transition: 0.3s ease;
   z-index: 10000;
 }
-
 #sidebar.active { left: 0; }
-
 .sidebar-item {
   padding: 15px 20px;
   font-size: 16px;
   border-bottom: 1px solid #eee;
   cursor: pointer;
 }
-
 .sidebar-item:hover { background: #f4f6f8; }
-
 /* --- قسم الاستمارات --- */
 .forms-box {
   display: none;
@@ -203,7 +180,6 @@ body {
   gap: 18px;
   padding: 10px 0;
 }
-
 .card {
   background: #ffffff;             /* خلفية بيضاء نقية */
   padding: 20px 15px;
@@ -217,20 +193,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
   /* نصوص سوداء داكنة */
   color: #1a1a1a;                  
   font-size: 1.1rem;
   font-weight: 700;                /* خط عريض وواضح */
 }
-
 /* تأثير عند تمرير الماوس */
 .card:hover {
   transform: translateY(-3px);
   background: #f9f9f9;             /* رمادي خفيف جداً عند اللمس */
   box-shadow: 0 6px 12px rgba(15, 157, 88, 0.2); /* توهج أخضر خفيف */
 }
-
 /* إلغاء تلوين الكروت الفردية والزوجية للحفاظ على بياضها */
 .card-link:nth-child(odd) .card, 
 .card-link:nth-child(even) .card { 
@@ -242,7 +215,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* جعلها مستطيلة أعرض */
   gap: 15px;
 }
-
 .card {
   background: #ffffff !important;   /* خلفية بيضاء نقية */
   padding: 18px 15px;
@@ -256,20 +228,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
   /* نصوص سوداء داكنة جداً */
   color: #111111 !important;        
   font-size: 1.05rem;
   font-weight: 800;                 /* خط عريض جداً للوضوح */
   text-decoration: none;
 }
-
 .card:hover {
   transform: translateY(-4px);
   background: #f0fdf4 !important;   /* تغيير خفيف جداً عند اللمس */
   box-shadow: 0 6px 12px rgba(0, 135, 81, 0.15);
 }
-
 /* القائمة المنسدلة */
 .sub-categories {
   background: #f9f9f9;
@@ -287,7 +256,6 @@ body {
   color: #1a1a1a;
   direction: rtl;
 }
-
 /* --- تصميم الهيدر (كما في الصور) --- */
 .header-banner {
     padding: 40px 20px 60px 20px;
@@ -296,7 +264,6 @@ body {
     background: linear-gradient(135deg, #0f9d58, #1abc9c);
     position: relative;
 }
-
 .header-content {
     display: flex;
     justify-content: space-between;
@@ -304,10 +271,8 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
-
 .text-side h1 { font-size: 1.8rem; margin: 0 0 10px 0; }
 .text-side p { font-size: 0.95rem; line-height: 1.5; margin: 0; opacity: 0.95; }
-
 .circle-logo {
     width: 90px;
     height: 90px;
@@ -317,7 +282,6 @@ body {
     object-fit: contain;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-
 /* --- تصميم القائمة (مستطيلة متوسطة) --- */
 .options-list {
     background: white;
@@ -331,7 +295,6 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
 .option-item {
     display: flex;
     justify-content: space-between;
@@ -344,21 +307,17 @@ body {
     transition: 0.3s ease;
     border-right: 5px solid transparent; /* لتفاعل الإطار عند الحوم */
 }
-
 .option-item:last-child { border-bottom: none; }
-
 .option-item span { 
     color: #0f9d58; /* السهم أو النقاط بلون أخضر */
     font-size: 1.2rem;
 }
-
 /* تأثير الحوم (Hover) */
 .option-item:hover {
     background: #f9f9f9;
     border-right: 5px solid #0f9d58; /* يظهر إطار أخضر صريح على اليمين عند الاختيار */
     padding-right: 30px;
 }
-
 /* --- تصميم المربعات المستطيلة للأقسام الأخرى --- */
 .categories {
   display: grid;
@@ -366,7 +325,6 @@ body {
   gap: 15px;
   padding: 10px;
 }
-
 .card {
   background: #ffffff;
   padding: 18px 15px;
@@ -384,13 +342,11 @@ body {
   font-size: 1.05rem;
   font-weight: 800;
 }
-
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 12px rgba(15, 157, 88, 0.2);
   background: #f0fdf4;
 }
-
 /* --- القائمة المنسدلة --- */
 .sub-categories {
   background: #f9f9f9;
@@ -398,5 +354,95 @@ body {
   border-radius: 15px;
   margin: 10px 15px;
   border: 1px dashed #0f9d58;
+}
+/* تنسيق الحاوية الرئيسية */
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #ffffff;
+    border: 2px solid #0f9d58; /* إطار أخضر متناسق */
+    border-radius: 15px;
+}
+.contact-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+/* تنسيق فقرة البريد الإلكتروني */
+.email-container {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}
+.contact-text {
+    color: #111111; /* أسود داكن للوضوح */
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+.email-link-text {
+    display: inline-block;
+    color: #0f9d58 !important; /* لون أخضر رسمي */
+    font-weight: 800; /* خط عريض جداً */
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #f9f9f9;
+    border: 1.5px solid #eee;
+    border-radius: 10px; /* شكل مستطيل مريح للنقر */
+    transition: background 0.3s;
+}
+.email-link-text:hover {
+    background: #f0fdf4;
+    text-decoration: underline;
+}
+/* التثبيت في أعلى اليسار */
+.top-left-lang-container {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 10002; /* ليكون فوق زر مواطن جزائري */
+}
+/* تصميم الزر الأساسي */
+.lang-btn-main {
+    background: #ffffff;
+    color: #111111 !important; /* أسود داكن للوضوح */
+    border: 2px solid #0f9d58;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 800; /* خط عريض */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+/* قائمة الخيارات (مستطيلات سوداء واضحة) */
+.lang-dropdown-box {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    padding: 8px;
+    min-width: 130px;
+}
+.lang-item {
+    color: #111111 !important; /* نص أسود داكن */
+    font-weight: 700;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left; /* ليتناسب مع اللغات الأجنبية */
+}
+.lang-item:hover {
+    background: #f0fdf4;
+    border-color: #0f9d58;
 }
 

@@ -2,7 +2,6 @@
  * 🛡️ حماية أساسية
  ***********************/
 document.addEventListener("contextmenu", e => e.preventDefault());
-
 document.addEventListener("keydown", e => {
   if (
     e.key === "F12" ||
@@ -12,7 +11,6 @@ document.addEventListener("keydown", e => {
     e.preventDefault();
   }
 });
-
 // كشف DevTools بدون تخريب الموقع
 setInterval(() => {
   const t1 = performance.now();
@@ -22,19 +20,15 @@ setInterval(() => {
     console.warn("DevTools detected");
   }
 }, 2000);
-
-
 /***********************
  * ✅ كودك الأصلي
  ***********************/
 document.addEventListener("DOMContentLoaded", () => {
-
   // --- العناصر الأساسية ---
   const enterBtn = document.getElementById("enterBtn");
   const splash = document.getElementById("splash");
   const main = document.getElementById("mainContent");
   const searchInput = document.querySelector(".search");
-
   // --- 1. شاشة الترحيب ---
   if (enterBtn && splash && main) {
     enterBtn.addEventListener("click", () => {
@@ -48,16 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 500);
     });
   }
-
   // --- 2. البحث الذكي ---
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       const term = e.target.value.toLowerCase().trim();
-
       document.querySelectorAll(".section-title").forEach(title => {
         let section = title.nextElementSibling;
         let found = false;
-
         while (section && !section.classList.contains("section-title")) {
           if (section.classList.contains("categories") || section.classList.contains("sub-categories")) {
             section.querySelectorAll(".card-link").forEach(link => {
@@ -69,10 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
           }
           section = section.nextElementSibling;
         }
-
         title.style.display = (found || term === "") ? "block" : "none";
       });
-
       document.querySelectorAll(".anem-card").forEach(anem => {
         const match = anem.textContent.toLowerCase().includes(term);
         anem.parentElement.style.display = (match || term === "") ? "grid" : "none";
@@ -80,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
 // --- 3. Google Form ---
 function openForm() {
   window.open(
@@ -88,7 +76,6 @@ function openForm() {
     "_blank"
   );
 }
-
 // --- 4. قائمة ANEM ---
 function toggleAnem() {
   const sub = document.getElementById("anemSub");
@@ -96,11 +83,19 @@ function toggleAnem() {
   sub.style.display =
     (sub.style.display === "none" || sub.style.display === "") ? "block" : "none";
 }
-
 // --- 5. CamScanner ---
 function toggleCamScanner() {
   const camSub = document.getElementById("camSub");
   if (!camSub) return;
   camSub.style.display =
     (camSub.style.display === "none" || camSub.style.display === "") ? "grid" : "none";
+}
+function changeLang(lang) {
+    const activeText = document.getElementById('activeLang');
+    if (lang === 'ar') activeText.innerText = 'العربية';
+    if (lang === 'fr') activeText.innerText = 'Français';
+    if (lang === 'en') activeText.innerText = 'English';
+    // إغلاق القائمة
+    document.getElementById('langMenuDropdown').style.display = 'none';
+    // توجيه مستقبلي: يمكنك إضافة كود هنا لتغيير نصوص الموقع
 }

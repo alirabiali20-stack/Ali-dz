@@ -8,15 +8,65 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
+</div>
 <body>
   <div id="splash">
     <h1 class="typing">مواطن جزائري</h1>
     <button id="enterBtn">دخول</button>
   </div>
-  <div id="mainContent" style="display:none;">
+  <div id="mainContent" style="display:none;"><div class="top-menu-container">
+    <button class="citizen-btn-large" onclick="toggleSection('mainCitizenMenu')">
+        مواطن جزائري 🇩🇿
+    </button>
+</div>
+<div class="top-left-lang-container">
+    <button class="lang-btn-main" onclick="toggleSection('langMenuDropdown')">
+        <span id="activeLang">العربية</span>
+        <span class="globe-icon">🌐</span>
+    </button>
+    <div id="langMenuDropdown" class="lang-dropdown-box" style="display:none;">
+        <div class="lang-item" onclick="changeLang('ar')">🇩🇿 العربية</div>
+        <div class="lang-item" onclick="changeLang('fr')">🇫🇷 Français</div>
+        <div class="lang-item" onclick="changeLang('en')">🇬🇧 English</div>
+    </div>
+</div>
+<div id="mainCitizenMenu" class="index-overlay" style="display:none;">
+    <div class="index-header">
+        <h3>🇩🇿 بوابة المواطن الجزائري</h3>
+        <button class="close-btn" onclick="toggleSection('mainCitizenMenu')">إغلاق ✕</button>
+    </div>
+    <div class="categories">
+        <div class="card fav-trigger" onclick="toggleSection('favoritesSubMenu')">
+            ⭐ قائمة المفضلة والخدمات السريعة
+        </div>
+        <div id="favoritesSubMenu" style="display:none; margin-top: 10px; padding-right: 15px; border-right: 3px solid #0f9d58;">
+            <div class="card" style="border-color: #e74c3c;" onclick="toggleSection('emergencyLinks')">🚨 حالات الطوارئ والتبليغ</div>
+            <div id="emergencyLinks" style="display:none; margin-bottom: 10px;">
+                <a href="tel:1548" class="card-link"><div class="card">📞 الشرطة (1548)</div></a>
+                <a href="tel:14" class="card-link"><div class="card">🚑 الحماية المدنية (14)</div></a>
+            </div>
+            <div class="card" style="border-color: #3498db;" onclick="toggleSection('docsLinks')">📄 وثائقي الإدارية</div>
+            <div id="docsLinks" style="display:none; margin-bottom: 10px;">
+                <a href="https://etatcivil.interieur.gov.dz/" target="_blank" class="card-link"><div class="card">شهادة الميلاد (S12)</div></a>
+                <a href="https://e-casier.mjustice.dz/" target="_blank" class="card-link"><div class="card">شهادة السوابق العدلية</div></a>
+                <a href="https://elhanaa.cnas.dz/inscription.xhtml" target="_blank" class="card-link"><div class="card">طلب بطاقة الشفاء</div></a>
+            </div>
+            <div class="card" style="border-color: #2ecc71;" onclick="toggleSection('eduLinks')">📚 التعليم والنتائج</div>
+            <div id="eduLinks" style="display:none; margin-bottom: 10px;">
+                <a href="https://www.dzexams.com/" target="_blank" class="card-link"><div class="card">مواضيع الاختبارات</div></a>
+                <a href="https://ostad.education.dz/auth" target="_blank" class="card-link"><div class="card">فضاء الأستاذ</div></a>
+                <a href="https://educationdz.com/tharwa-education-gov-dz/" target="_blank" class="card-link"><div class="card">فضاء الأولياء</div></a>
+            </div>
+
+            <a href="https://alirabiali20-stack.github.io/Ali-dz/forms.html" target="_blank" class="card-link">
+                <div class="card" style="background: #fff5e6; border-color: #f39c12;">🖨️ نماذج واستمارات للطباعة</div>
+            </a>
+        </div>
+    </div>
+</div>
     <h2 class="section-title">
       <span class="logo-icon">🟢</span>
-      الخدمات المتاحة Syntax.ALI
+      الخدمات المتاحة
     </h2>
     <input type="text" class="search" placeholder="🔍 ابحث داخل المنصة">
     <div class="categories">
@@ -767,17 +817,27 @@
     </a>
   </div>
 </div>
+   <div class="ask-problem-container">
     <h2 class="ask-title">❓ اطرح مشكلتك</h2>
-    <p style="margin-bottom:10px;color:#555">سيتم توجيهك إلى نموذج آمن لإرسال مشكلتك</p>
+    <p class="ask-description">سيتم توجيهك إلى نموذج آمن لإرسال مشكلتك</p>
+    
     <button class="send" onclick="openForm()">إرسال المشكلة</button>
     <div class="contact">
-      <h2 class="section-title">📞 اتصل بنا</h2>
-      <div class="contact-icons">
-        <a href="https://wa.me/213671720653" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="55"></a>
-        <a href="https://t.me/RabiaAameur" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="55"></a>
-        <a href="https://www.facebook.com/share/1B6d3A3TdS/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="55"></a>
-      </div>
+  <h2 class="section-title">📞 اتصل بنا</h2>
+  <div class="index-section contact-box">
+    <div class="contact-icons">
+      <a href="https://wa.me/213671720653" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="55" alt="WhatsApp"></a>
+      <a href="https://t.me/RabiaAameur" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="55" alt="Telegram"></a>
+      <a href="https://www.facebook.com/share/1B6d3A3TdS/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="55" alt="Facebook"></a>
     </div>
+    <div class="email-container">
+      <p class="contact-text">أو يمكنك مراسلتنا عبر البريد الإلكتروني الرسمي:</p>
+      <a href="mailto:Algeriancitizen14@gmail.com" class="email-link-text">
+        📩 Algeriancitizen14@gmail.com
+      </a>
+    </div>
+  </div>
+</div>
     <footer style="margin-top: 50px; padding: 20px; background-color: #f9f9f9; text-align: center; border-top: 1px solid #ddd; font-size: 14px; color: #666;">
         <p><strong>إخلاء مسؤولية:</strong> منصة مواطن-جزائري هي دليل روابط مستقل لتسهيل الوصول للخدمات الرقمية الرسمية. نحن لا نتبع لأي جهة حكومية، لا نجمع بيانات، ولا نطلب معلومات سرية.</p>
         <p dir="ltr">© 2026 Ali.dz - Educational & Service Directory</p>
@@ -891,7 +951,18 @@ function toggleSection(id) {
             document.getElementById('mainContent').style.display = 'block';
             // يسجل نقطة بداية حتى لا يخرج المتصفح عند أول ضغطة رجوع
             window.history.pushState({ main: true }, "");
-        });
+        });function changeLang(lang) {
+    const activeText = document.getElementById('activeLang');
+    if (lang === 'ar') activeText.innerText = 'العربية';
+    if (lang === 'fr') activeText.innerText = 'Français';
+    if (lang === 'en') activeText.innerText = 'English';
+    
+    // إغلاق القائمة
+    document.getElementById('langMenuDropdown').style.display = 'none';
+    
+    // توجيه مستقبلي: يمكنك إضافة كود هنا لتغيير نصوص الموقع
+}
+
     </script>
 </body>
 </html>

@@ -445,4 +445,179 @@ body {
     background: #f0fdf4;
     border-color: #0f9d58;
 }
+.typing-effect {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
 
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #000; /* المؤشر */
+}
+.typing-effect span {
+  background: linear-gradient(270deg, #006233, #ffffff, #d21034);
+  background-size: 600% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: moveGradient 5s linear infinite;
+}
+.algerian-flag {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  text-align: center;
+  /* لون متدرج للعلم الجزائري */
+  background: linear-gradient(270deg, #006233, #ffffff, #d21034, #006233);
+  background-size: 600% 100%; /* لتسريع الحركة */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* الحركة */
+  animation: moveGradient 5s linear infinite;
+}
+/* تعريف الحركة */
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* --- 1. الإعدادات العامة والمتغيرات --- */
+:root {
+  --dz-green: #0f9d58;
+  --dz-green-dark: #0d8a4d;
+  --dz-red: #e74c3c;
+  --dz-white: #ffffff;
+  --text-dark: #111111; /* أسود داكن جداً للوضوح المطلق */
+  --bg-light: #f4f6f8;
+}
+* {
+  user-select: none;
+  -webkit-user-select: none;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  direction: rtl;
+}
+/* --- 2. زر "مواطن جزائري" الرئيسي --- */
+.top-menu-container {
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.citizen-btn-large {
+  background-color: var(--dz-green);
+  color: var(--dz-white) !important;
+  border: 2px solid var(--dz-white);
+  padding: 12px 35px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 800; /* خط عريض جداً */
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(15, 157, 88, 0.3);
+  transition: transform 0.2s, background 0.3s;
+}
+.citizen-btn-large:hover {
+  transform: scale(1.05);
+  background-color: var(--dz-green-dark);
+}
+/* --- 3. الفهرس (بوابة المواطن) - التصميم المتوافق مع العلم --- */
+.index-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--dz-white) !important;
+  z-index: 10000;
+  overflow-y: auto;
+  padding: 20px;
+}
+.index-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid var(--dz-green); /* شريط العلم الأخضر */
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+}
+.index-header h3 {
+  color: var(--text-dark);
+  font-weight: 800;
+  margin: 0;
+}
+/* --- 4. تصميم البطاقات (مستطيلات متوسطة مريحة) --- */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+.card {
+  background: #ffffff !important;
+  padding: 18px 15px;
+  text-align: center;
+  border-radius: 12px;
+  border: 2px solid var(--dz-green); /* إطار أخضر صريح */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: 0.3s ease;
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark) !important;
+  font-size: 1.1rem;
+  font-weight: 800; /* خط غليظ للوضوح */
+}
+/* تمييز أقسام الطوارئ باللون الأحمر (لون العلم) */
+.card[style*="#e74c3c"] {
+  border-color: var(--dz-red) !important;
+}
+.card:hover {
+  transform: translateY(-4px);
+  background: #f0fdf4 !important; /* لمسة خضراء عند اللمس */
+  box-shadow: 0 6px 12px rgba(15, 157, 88, 0.2);
+}
+/* --- 5. زر اللغة (أعلى اليسار) --- */
+.top-left-lang-container {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 10002;
+}
+.lang-btn-main {
+  background: var(--dz-white);
+  color: var(--text-dark) !important;
+  border: 2px solid var(--dz-green);
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+/* --- 6. تأثير العلم المتحرك (Typing & Gradient) --- */
+.typing-effect span {
+  font-weight: 800;
+  background: linear-gradient(270deg, #006233, #7d7d7d, #d21034); /* تم تعديل الأبيض لرمادي خفيف جداً ليظهر على الخلفية البيضاء */
+  background-size: 600% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: moveGradient 5s linear infinite;
+}
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* --- 7. زر الإغلاق --- */
+.close-btn {
+  background: var(--dz-red);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+}

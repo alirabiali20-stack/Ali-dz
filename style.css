@@ -830,4 +830,39 @@ body.dark-mode .option-item {
 body.dark-mode .option-item:hover {
     background-color: #004d28 !important;
 }
+/* كود إضافي لإصلاح التداخل في الهواتف */
+@media (max-width: 768px) {
+    /* تصغير زر "اعرف قصتنا" ونقله للأعلى قليلاً */
+    .about-us-premium {
+        top: 10px !important; /* رفعه للأعلى لتجنب الوسط */
+        left: 10px !important;
+        padding: 6px 12px !important; /* تصغير الحجم */
+        transform: scale(0.85); /* تصغير النسبة الكلية */
+    }
+
+    /* تصغير زر "الوضع الليلي" ونقله للأعلى قليلاً */
+    .theme-toggle-premium {
+        top: 10px !important;
+        right: 10px !important;
+        padding: 6px 12px !important;
+        transform: scale(0.85);
+    }
+
+    /* إخفاء النص في الهواتف والاكتفاء بالأيقونة لتوفير مساحة (اختياري) */
+    /* إذا كنت تريد بقاء النص، اترك الكود التالي كما هو */
+    .about-text-premium, .theme-text {
+        font-size: 0.75rem !important;
+        display: none; /* هذا سيخفي النص ويترك الأيقونة فقط في الهواتف لتجنب التغطية */
+    }
+
+    /* إظهار الأيقونات بحجم أوضح في الهاتف */
+    .about-icon-premium, #theme-icon {
+        font-size: 1.2rem !important;
+    }
+    
+    /* منع حلقة النبض من التوسع الزائد في الهاتف */
+    .pulse-ring, .pulse-ring-theme {
+        display: none; /* إيقاف النبض في الهاتف لتقليل الفوضى البصرية */
+    }
+}
 

@@ -19,6 +19,40 @@
         مواطن جزائري 🇩🇿
     </button>
 </div>
+  <div class="about-us-premium" onclick="toggleSection('aboutModal')">
+    <div class="pulse-ring"></div>
+    <span class="about-icon-premium">✨</span>
+    <span class="about-text-premium">ملخص المنصة  </span>
+</div>
+<div id="aboutModal" class="index-overlay premium-modal" style="display:none;">
+    <div class="premium-header">
+        <div class="header-line"></div>
+        <h3>🇩🇿 بوابة المواطن الجزائري</h3>
+        <button class="close-btn-premium" onclick="toggleSection('aboutModal')">✕</button>
+    </div>
+    <div class="about-article">
+        <div class="hero-text">نحن نبني جسراً بينك وبين <span class="highlight">مستقبلك الرقمي</span></div>
+        <p class="main-p">مرحباً بك في وجهتك الأولى لتسهيل المعاملات. <strong>بوابة المواطن</strong> ليست مجرد موقع، بل هي رفيقك اليومي للوصول إلى كل الخدمات الإدارية بضغطة زر واحدة.</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <span class="f-icon">🚀</span>
+                <p>سرعة الوصول للمعلومة</p>
+            </div>
+            <div class="feature-item">
+                <span class="f-icon">🛡️</span>
+                <p>روابط آمنة ورسمية</p>
+            </div>
+        </div>
+        <div class="info-card-premium">
+            ⚠️ <strong>مهمتنا:</strong> تجميع الخدمات في فضاء واحد لتوفير وقتك وجهدك. نحن منصة مستقلة تدعم التحول الرقمي في الجزائر مع💪❣️ا لنكون الأفضل.
+        </div>
+        <div class="footer-note">بكل فخر، من أجل المواطن الجزائري 🇩🇿</div>
+    </div>
+</div>
+<div class="theme-toggle-premium" onclick="toggleTheme()">
+    <div class="pulse-ring-theme"></div> <span id="theme-icon">🌙</span>
+    <span class="theme-text" id="theme-text">الوضع الليلي</span>
+</div>
 <div id="mainCitizenMenu" class="index-overlay" style="display:none;">
     <div class="index-header">
         <h3>🇩🇿 بوابة المواطن الجزائري</h3>
@@ -46,7 +80,6 @@
                 <a href="https://ostad.education.dz/auth" target="_blank" class="card-link"><div class="card">فضاء الأستاذ</div></a>
                 <a href="https://educationdz.com/tharwa-education-gov-dz/" target="_blank" class="card-link"><div class="card">فضاء الأولياء</div></a>
             </div>
-
             <a href="https://alirabiali20-stack.github.io/Ali-dz/forms.html" target="_blank" class="card-link">
                 <div class="card" style="background: #fff5e6; border-color: #f39c12;">🖨️ نماذج واستمارات للطباعة</div>
             </a>
@@ -543,7 +576,6 @@
     <a href="https://play.google.com/store/apps/details?id=com.transferwise.android" target="_blank" class="card-link">
         <div class="card">🌍 Wise (تحويل عالمي)</div>
     </a>
-
     <div class="card" style="font-size: 0.85rem; color: #d32f2f; border-color: #d32f2f; grid-column: 1 / -1; padding: 10px; font-weight: bold;">
         ⚠️ تنبيه: بعض هذه البطاقات قد تواجه قيوداً أو حظراً داخل الجزائر؛ يرجى التأكد من الحالة القانونية قبل الاستخدام.
     </div>
@@ -945,13 +977,38 @@ function toggleSection(id) {
     if (lang === 'ar') activeText.innerText = 'العربية';
     if (lang === 'fr') activeText.innerText = 'Français';
     if (lang === 'en') activeText.innerText = 'English';
-    
     // إغلاق القائمة
     document.getElementById('langMenuDropdown').style.display = 'none';
-    
     // توجيه مستقبلي: يمكنك إضافة كود هنا لتغيير نصوص الموقع
+}function toggleTheme() {
+    const body = document.body;
+    const isDark = body.classList.toggle('dark-mode');
+    // تحديث الأيقونة والنص
+    const themeIcon = document.getElementById('theme-icon');
+    const themeText = document.getElementById('theme-text');
+    if (themeIcon) themeIcon.innerText = isDark ? '☀️' : '🌙';
+    if (themeText) themeText.innerText = isDark ? 'الوضع النهاري' : 'الوضع الليلي';
+    // حفظ الحالة
+    localStorage.setItem('user-theme', isDark ? 'dark' : 'light');
+    // --- الحل الجذري للأقسام البيضاء ---
+    const allElements = document.querySelectorAll('*');
+    allElements.forEach(el => {
+        if (isDark) {
+            // إذا كان العنصر يملك خلفية بيضاء في الـ HTML، نجبرها لتصبح خضراء داكنة
+            if (el.style.backgroundColor === 'white' || el.style.background === 'white' || el.style.backgroundColor === 'rgb(255, 255, 255)') {
+                el.setAttribute('data-old-bg', el.style.backgroundColor); // حفظ اللون القديم
+                el.style.setProperty('background-color', '#003a1e', 'important');
+                el.style.setProperty('color', '#ffffff', 'important');
+            }
+        } else {
+            // العودة للوضع الطبيعي
+            if (el.hasAttribute('data-old-bg')) {
+                el.style.backgroundColor = el.getAttribute('data-old-bg');
+                el.style.color = ''; 
+            }
+        }
+    });
 }
-
     </script>
 </body>
 </html>

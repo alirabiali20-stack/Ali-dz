@@ -621,3 +621,213 @@ body {
   font-weight: 800;
   cursor: pointer;
 }
+/* الزر المثبت - تصميم بريميوم */
+.about-us-premium {
+    position: fixed;
+    top: 70px;
+    left: 15px;
+    z-index: 10001;
+    background: linear-gradient(135deg, #0f9d58, #16a085);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(15, 157, 88, 0.3);
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.about-us-premium:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(15, 157, 88, 0.4);
+}
+.about-text-premium {
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+/* حلقة النبض لجذب الانتباه */
+.pulse-ring {
+    position: absolute;
+    width: 100%; height: 100%;
+    border-radius: 30px;
+    border: 2px solid #0f9d58;
+    left: 0; top: 0;
+    animation: pulse-animation 2s infinite;
+}
+@keyframes pulse-animation {
+    0% { transform: scale(0.95); opacity: 1; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+/* النافذة المنبثقة الاحترافية */
+.premium-modal {
+    background: linear-gradient(to bottom, #ffffff, #f0fdf4) !important;
+}
+.premium-header {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 30px;
+}
+.hero-text {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #111;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+.highlight {
+    color: #0f9d58;
+    position: relative;
+}
+/* تنسيق الفقرات */
+.main-p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 30px;
+}
+/* شبكة المميزات */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.feature-item {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #e0f2f1;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.f-icon { font-size: 1.5rem; margin-bottom: 10px; display: block; }
+/* بطاقة المعلومات */
+.info-card-premium {
+    background: rgba(231, 76, 60, 0.05);
+    border-right: 5px solid #e74c3c;
+    padding: 20px;
+    border-radius: 10px;
+    color: #111;
+    font-weight: 700;
+    line-height: 1.6;
+}
+.close-btn-premium {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #eee;
+    border: none;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* إجبار الحاويات الرئيسية على اللون الأخضر الداكن */
+body.dark-mode #mainContent, 
+body.dark-mode .container, 
+body.dark-mode section,
+body.dark-mode .top-menu-container {
+    background-color: #002b16 !important;
+}
+/* إجبار الفهرس والقوائم المنبثقة */
+body.dark-mode #mainCitizenMenu, 
+body.dark-mode .index-overlay,
+body.dark-mode .categories {
+    background-color: #003a1e !important;
+}
+
+/* أي بطاقة تظهر بيضاء سيتم كسر لونها هنا */
+body.dark-mode .card {
+    background-color: #004d28 !important;
+    color: white !important;
+}
+/* --- 1. تصميم زر الوضع الليلي (الوضع الافتراضي/النهاري) --- */
+.theme-toggle-premium {
+    position: fixed;
+    top: 70px;
+    right: 15px; /* الجهة اليمنى */
+    z-index: 10001;
+    /* تدرج أخضر جذاب يطابق "اعرف قصتنا" */
+    background: linear-gradient(135deg, #0f9d58, #16a085);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    /* ظلال عميقة واحترافية */
+    box-shadow: 0 10px 20px rgba(15, 157, 88, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    /* حركة انسيابية مرنة */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    user-select: none;
+}
+.theme-toggle-premium:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 25px rgba(15, 157, 88, 0.4);
+}
+.theme-text {
+    font-weight: 800; /* خط عريض جداً للوضوح */
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+/* --- 2. تأثير حلقة النبض (Pulse Effect) --- */
+.pulse-ring-theme {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    border: 2px solid #0f9d58;
+    left: 0;
+    top: 0;
+    animation: pulse-animation-theme 2s infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse-animation-theme {
+    0% { transform: scale(0.95); opacity: 1; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* --- 3. إعدادات الوضع الليلي (خلفية خضراء تماماً) --- */
+body.dark-mode {
+    background-color: #002b16 !important; /* أخضر ملكي داكن جداً */
+    color: #ffffff !important;
+}
+
+/* تغيير شكل الزر نفسه عند تفعيل الوضع الليلي ليبرز */
+body.dark-mode .theme-toggle-premium {
+    background: linear-gradient(135deg, #ffffff, #f0fdf4);
+    color: #002b16 !important;
+    border-color: #0f9d58;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .pulse-ring-theme {
+    border-color: #ffffff;
+}
+
+/* --- 4. ضمان تحول بقية العناصر للأخضر الداكن --- */
+body.dark-mode .card, 
+body.dark-mode .index-overlay, 
+body.dark-mode .premium-modal,
+body.dark-mode .contact-box {
+    background-color: #003a1e !important; /* أخضر أفتح قليلاً للتمييز */
+    border-color: #0f9d58 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .option-item {
+    background-color: transparent !important;
+    border-bottom: 1px solid #004d28 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .option-item:hover {
+    background-color: #004d28 !important;
+}
+

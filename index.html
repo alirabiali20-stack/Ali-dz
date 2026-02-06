@@ -12,7 +12,7 @@
 <body>
   <div id="splash">
     <h1 class="algerian-flag">مواطن جزائري </h1>
-    <button id="enterBtn">دخول</button>
+    <button id="enterBtn">إبدأ التطبيق</button>
   </div>
 
   <div id="mainContent" style="display:none;"><div class="top-menu-container">
@@ -887,26 +887,50 @@
 </div>
   </div>
 </div>
-   <div class="ask-problem-container">
-    <h2 class="ask-title">❓ اطرح مشكلتك</h2>
-    <p class="ask-description">سيتم توجيهك إلى نموذج آمن لإرسال مشكلتك</p>
-    <button class="send" onclick="openForm()">إرسال المشكلة</button>
-    <div class="contact">
-  <h2 class="section-title">📞 اتصل بنا</h2>
-  <div class="index-section contact-box">
-    <div class="contact-icons">
-      <a href="https://wa.me/213671720653" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="55" alt="WhatsApp"></a>
-      <a href="https://t.me/RabiaAameur" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" width="55" alt="Telegram"></a>
-      <a href="https://www.facebook.com/share/1B6d3A3TdS/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" width="55" alt="Facebook"></a>
-    </div>
-    <div class="email-container">
-      <p class="contact-text">أو يمكنك مراسلتنا عبر البريد الإلكتروني الرسمي:</p>
-      <a href="mailto:Algeriancitizen14@gmail.com" class="email-link-text">
-        📩 Algeriancitizen14@gmail.com
-      </a>
-    </div>
-  </div>
+ <div class="fixed-bottom-nav" id="bottomNav" style="display:none;">
+    <a href="mailto:Algeriancitizen14@gmail.com" class="nav-item-btn">
+        <i class="fas fa-envelope icon-green"></i>
+        منطقة الدعم
+    </a>
+    <button onclick="openForm()" class="nav-item-btn">
+        <i class="fas fa-edit icon-green"></i>
+        إرسال استفسار
+    </button>
+
+    <button onclick="toggleSection('mainCitizenMenu')" class="nav-item-btn">
+        <i class="fas fa-star icon-green"></i>
+        المفضلة
+    </button>
+
+    <button onclick="checkAppUpdates()" class="nav-item-btn">
+        <i class="fas fa-sync-alt icon-green"></i>
+        التحديثات
+    </button>
 </div>
+
+<script>
+// وظيفة إظهار الشريط عند الدخول
+const btnEnter = document.getElementById('enterBtn');
+if(btnEnter) {
+    btnEnter.addEventListener('click', function() {
+        document.getElementById('bottomNav').style.display = 'flex';
+    });
+}
+
+// وظيفة التحديثات
+function checkAppUpdates() {
+    alert("المنصة محدثة لنسخة فبراير 2026. لا توجد تحديثات جديدة.");
+}
+
+// التأكد من وجود مكتبة الأيقونات (Font Awesome) لظهور الأيقونات بشكل صحيح
+if (!document.querySelector('link[href*="font-awesome"]')) {
+    var fa = document.createElement('link');
+    fa.rel = 'stylesheet';
+    fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
+    document.head.appendChild(fa);
+}
+</script>
+
     <footer style="margin-top: 50px; padding: 20px; background-color: #f9f9f9; text-align: center; border-top: 1px solid #ddd; font-size: 14px; color: #666;">
         <p><strong>إخلاء مسؤولية:</strong> منصة مواطن-جزائري هي دليل روابط مستقل لتسهيل الوصول للخدمات الرقمية الرسمية. نحن لا نتبع لأي جهة حكومية، لا نجمع بيانات، ولا نطلب معلومات سرية.</p>
         <p dir="ltr">© 2026 Ali.dz - Educational & Service Directory</p>
